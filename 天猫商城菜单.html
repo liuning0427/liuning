@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天猫</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            display: block;
+            background: #ffdccd;
+            width: 2000px;
+            height: 50px;
+        }
+        #list{
+            list-style: none;
+        }
+        #list .one a{
+            text-decoration: none;
+            color: black;
+        }
+        #list .one{
+            float: left;
+            margin-right: 10px;
+            line-height: 50px;
+        }
+        #list .one:hover a{
+            color: #ff0000;
+        }
+        #list2 .two{
+            float: right;
+            list-style: none;
+            line-height: 50px;
+        }
+        #list2 .two a{
+            text-decoration: none;
+            color:black;
+            margin-left: 10px;
+        }
+        #list2 .two:hover> a{
+            color: #ff281f;
+        }
+       .three{
+            list-style: none;
+        }
+        #list2 .three a{
+            text-decoration: none;
+        }
+        #list2 .two:hover .three {
+            display: block;
+            background: #b38fda;
+        }
+        #list2 .three{
+            display: none;
+        }
+        #list2 .d:hover{
+            background: #ffe1df;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <ul id="list">
+        <li class="one">欢迎来天猫</li>
+        <li class="one"><a href="">请登录</a></li>
+        <li class="one"><a href="">请注册</a></li>
+    </ul>
+    <ul id="list2">
+        <li class="two"><a href="">网站导航</a></li>
+        <li class="two"><a href="http://www.taobao.com">淘宝网</a></li>
+        <li class="two">
+            <a href="">我的购物车</a>
+            <ul class="three">
+                <li class="d"><a href="">已买到的宝贝</a></li>
+                <li class="d"><a href="">清空购物车</a></li>
+            </ul>
+        </li>
+</div>
+    </ul>
+</body>
+</html>

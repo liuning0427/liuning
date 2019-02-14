@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小菜猪咪</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 6px;
+        }
+        #div{
+            background: white;
+            margin: 50px;
+        }
+        #menu{
+            height: 1000px;
+            width: 1000px;
+            margin-left: 400px;
+        }
+        #menu .one{
+            list-style: none;
+        }
+        #menu .one{
+            float: left;
+            width: 150px;
+            height: 30px;
+            background: #ffe1df;
+            margin-right: 50px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #menu .one > a{
+            text-decoration: none;
+            color: #fefdff;
+            display: block;
+        }
+        #menu .one:hover{
+            background: #ff9e9d;
+        }
+        #menu .dan{
+            display: none;
+        }
+        #menu .one:hover .dan{
+            display: block;
+            background: #ffdccd;
+            height: 60px;
+        }
+       #menu .dan > li{
+           display: block;
+       }
+       #menu .dan > li:hover{
+           background: #ffc4ba;
+       }
+        #menu .dan a{
+            text-decoration: none;
+            color: white;
+        }
+        h1{
+            color: #ff8eaa;
+            margin-left: 625px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>小菜猪咪</h1>
+    <div id="div"></div>
+    <ul id="menu">
+        <li class="one"><a href="">不爱小菜猪咪</a>
+        <ul class="dan">
+            <li><a href="">选别的</a></li>
+            <li><a href="">走开</a></li>
+        </ul></li>
+        <li class="one"><a href="">爱小菜猪咪</a></li>
+        <li class="one"><a href="">非常爱小菜猪咪</a></li>
+        <img src="./pic/timg.jpg" height="500" alt="">
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#head a{
+    text-decoration: none;
+
+}
+li{
+    list-style: none;
+}
+#head{
+    width: auto;
+    height: 32px;
+    background: #cccccc;
+}
+
+.surrond{
+    width: auto;
+    height: 32px;
+    margin: 0 auto;
+}
+#head{
+    font-size: 12px;
+}

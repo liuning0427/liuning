@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #cube{
+            width: 250px;
+            height: 250px;
+            /*border: 1px solid #000;*/
+            position:relative;
+        }
+        .zheng{
+            width: 125px;
+            height: 125px;
+            /*background:#cccccc;*/
+            border:1px solid #ffff00;
+            /*z-index: 1;*/
+            position: absolute;
+        }
+        .zheng1{
+            width: 125px;
+            height: 125px;
+            border:1px solid #ffff00;
+            position:absolute;
+            top:126px;
+            left:0;
+            /*z-index: 1;*/
+        }
+        .fang{
+            width: 125px;
+            height: 125px;
+            border:1px solid #ffff00;
+            position:absolute;
+            left:126px;
+            top:0;
+            /*z-index: 1;*/
+        }
+        .xing{
+            width: 125px;
+            height: 125px;
+            border:1px solid #ffff00;
+            position:absolute;
+            top:126px;
+            left:126px;
+            /*z-index: 1;*/
+        }
+
+        #cube .zheng1:hover{
+            border:1px solid #ff0000;
+            z-index: 1;
+        }
+       #cube .fang:hover{
+            border:1px solid #ff0000;
+            z-index: 1;
+        }
+        #cube .xing:hover{
+            border:1px solid #ff0000;
+        }
+        #cube .zheng:hover{
+            border:1px solid #ff0000;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div id="cube">
+        <div class="zheng"></div>
+        <div class="zheng1"></div>
+        <div class="fang"></div>
+        <div class="xing"></div>
+    </div>
+</body>
+</html>

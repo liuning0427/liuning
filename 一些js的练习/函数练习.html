@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //编写一个函数 f(x) = 4x2+3x+2，使用户通过提示对话框输入x的值，能得到相应的计算结果。
+        // var x = prompt ("请输入x的值");
+        // function result(){
+        //     var result = 4*x*x + 3*x + 2;
+        //     console.log(result);
+        // }
+        // result();
+
+
+        //编写一个函数Min(x,y)求出x,y这两个数中的最小值，要求x,y的值由用户通过提示对话框输入。
+        // var x = prompt('请输入x的值');
+        // var y = prompt('请输入y的值');
+        // function min(){
+        //     if(x>y){
+        //         console.log(y)
+        //     }else{
+        //         console.log(x)
+        //     }
+        //     return min;
+        // }
+        // min();
+
+
+        //编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数
+        //，并要求每行显示6个这样的数。
+        var a=0;
+        function foo(i){
+            for(var i = 1;i<=1000;i++){
+            if(i%3==0&&i%5==0&&i%7==0){
+                 document.write(i+'&nbsp;');
+                 a++;
+                 if(a%6==0){
+                     document.write('<br>');
+                 }
+                }  
+           }
+           return foo;
+        }
+        foo();
+
+        //编写程序，根据用户输入的数值，计算其平方、平方根和自然对数。
+        // var x = prompt('请输入x的值:');
+        // function result(x){
+        //     var result = Math.LNx;
+        //     console.log(result);
+        // }
+        // result();
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>

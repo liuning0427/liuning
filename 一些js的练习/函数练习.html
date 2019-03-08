@@ -17,12 +17,12 @@
         // }
         // result();
 
-        var x = prompt('请输入x的值');
-        function f(x){
-            return 4*Math.pow(x,2)+3*x+2;
-        }
-        f(x);
-        console.log(f(x));
+        // var x = prompt('请输入x的值');
+        // function f(x){
+        //     return 4*Math.pow(x,2)+3*x+2;
+        // }
+        // f(x);
+        // console.log(f(x));
 
 
 
@@ -66,11 +66,24 @@
         // result();
 
         //斐波那契数列
-        function foo(n){
+        // function foo(n){
             
+        // }
+
+
+        function getPI(n){
+            var PI = 0;
+            for(var i=1;i<=n;i++){
+                PI+=4*Math.pow(-1,i-1)/(2*i-1);
+            }
+            return PI;
+        }
+        // PI();
+        var arr=[100,500,1000,10000];
+        for(var i=0;i<arr.length;i++){
+            console.log(getPI(arr[i]));
         }
 
-        
         
         
         

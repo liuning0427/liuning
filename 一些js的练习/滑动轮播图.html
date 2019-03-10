@@ -13,17 +13,23 @@
         #box{
             width: 500px;
             height: 250px;
-            /* background:#ff0; */
+            background:#ff0;
             margin:100px auto;
             position:relative;
+            overflow:hidden;
         }
         #box img{
             width: 500px;
             height: 250px;
             display:none;
+            float:left;
         }
         #box .pic1{
             display:block;
+        }
+        #box .pict{
+            width: 1500px;
+            height: 250px;
         }
         #list{
             list-style:none;
@@ -61,7 +67,6 @@
        #last{
            left:10px;
        }
-    
     </style>
 </head>
 <body>
@@ -81,54 +86,25 @@
         <span id="last">&lt</span>
         
     </div>
-    
+
     <script>
         var aLi = document.getElementsByTagName('li');
-        var oBox = document.getElementById('box');
-        var aImg = oBox.getElementsByTagName('img');
-        var oNext = document.getElementById('next');
-        var idx = 0;
-        var timer;
+        var aImg = document.getElementsByTagName('img');
+
+        var idx;
+
         for(var i=0;i<aLi.length;i++){
             aLi[i].index = i;
             aLi[i].onclick = function(){
-               
-               change(this.idx);
-               idx = this.index;
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aImg[j].className = "";
                 }
-                // this.className = 'hh';
-                // aImg[this.index].className = 'pic1';
-        }
-        function change(num){
-             for(var j=0;j<aLi.length;j++){
-                aLi[j].className = "";
-                aImg[j].className = "";
-             }
-             aLi[idx].className = 'hh';
-             aImg[idx].className = 'pic1'
-        }
-        oNext.onclick = function(){
-            idx++;
-            if(idx == aLi.length){
-                idx = 0;
+                this.className = 'hh';
+                aImg[this.index].className = 'pic1';
             }
-            // for(var n=0;n<aLi.length;n++){
-            //     aLi[n].className = "";
-            //     aImg[n].className = "";
-            // }
-            change(idx);
         }
-       
-        function run(){
-            timer = setInterval(function(){
-                oNext.onclick();
-            } ,2000)
-        }
-        run();
-        //定时器；
-
-
-        
     </script>
+    
 </body>
 </html>

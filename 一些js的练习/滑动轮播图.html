@@ -13,7 +13,6 @@
         #box{
             width: 500px;
             height: 250px;
-            background:#ff0;
             margin:100px auto;
             position:relative;
             overflow:hidden;
@@ -21,15 +20,17 @@
         #box img{
             width: 500px;
             height: 250px;
-            display:none;
+            /* display:none; */
             float:left;
         }
-        #box .pic1{
+        /* #box .pic1{
             display:block;
-        }
-        #box .pict{
+        } */
+        #pict{
             width: 1500px;
             height: 250px;
+            position:absolute;
+            transition: left 1.5s ease;
         }
         #list{
             list-style:none;
@@ -49,7 +50,7 @@
             margin-right:5px;
         }
         #list .hh{
-            background: rgba(210,0,0,0.6)
+            background: rgba(210,0,0,0.6);
         }
        #next,#last{
            width: 30px;
@@ -71,7 +72,7 @@
 </head>
 <body>
     <div id="box">
-        <div class="pict">
+        <div id="pict">
             <img class="pic1" src="../pic/1.jpg" alt="">
             <img src="../pic/3 (1).jpg" alt="">
             <img src="../pic/3 (2).jpg" alt="">
@@ -89,21 +90,45 @@
 
     <script>
         var aLi = document.getElementsByTagName('li');
-        var aImg = document.getElementsByTagName('img');
-
-        var idx;
-
+        var oPict = document.getElementById('pict');
+        var oNext = document.getElementById('next');
+        var timer;
+        var idx = 0;
         for(var i=0;i<aLi.length;i++){
             aLi[i].index = i;
             aLi[i].onclick = function(){
-                for(var j=0;j<aLi.length;j++){
-                    aLi[j].className = "";
-                    aImg[j].className = "";
-                }
-                this.className = 'hh';
-                aImg[this.index].className = 'pic1';
+                // for(var j=0;j<aLi.length;j++){  //隐藏未被点击的标签样式；
+                //     aLi[j].className = "";
+                //     // aImg[j].className = "";
+                // }
+                // this.className = 'hh';
+                // // aImg[this.index].className = 'pic1';
+                // oPict.style.left = -this.index*500 + 'px';
+                change(this.index);
+                idx = this.index;
             }
         }
+        oNext.onclick = function(){
+            idx++;
+            if(idx == aLi.length){
+                idx = 0;
+            }
+            // this.className = 'hh';
+            change(idx);
+        }
+        function change(num){
+            for(var j=0;j<aLi.length;j++){
+                aLi[j].className = "";
+            }
+            aLi[num].className = 'hh';
+            oPict.style.left = -num*500 + 'px';
+        }
+        function run(){
+            timer = setInterval(function(){
+                oNext.onclick();
+            },2000)
+        }
+        run();
     </script>
     
 </body>

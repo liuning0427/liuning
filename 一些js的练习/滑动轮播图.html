@@ -27,11 +27,11 @@
             display:block;
         } */
         #pict{
-            width: 1500px;
+            width: 2000px;
             height: 250px;
             position:absolute;
-            left:0;
-            top:0px;
+            left:0; 
+            top:0;
             transition: left 1.5s ease;
         }
         #list{
@@ -78,6 +78,7 @@
             <img class="pic1" src="../pic/1.jpg" alt="">
             <img src="../pic/3 (1).jpg" alt="">
             <img src="../pic/3 (2).jpg" alt="">
+            <img src="../pic/1.jpg" alt="">
         </div>
         <ul id="list">
             <li class="hh">1</li>
@@ -89,7 +90,7 @@
         <span id="last">&lt</span>
         
     </div>
-
+    <script src="jslib.js"></script>
     <script>
         var aLi = document.getElementsByTagName('li');
         var oPict = document.getElementById('pict');
@@ -118,6 +119,7 @@
             // this.className = 'hh';
             change(idx);
         }
+        
         function change(num){
             for(var j=0;j<aLi.length;j++){
                 aLi[j].className = "";

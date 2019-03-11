@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            background: rgba(111,111,111,0.4);
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击</button>
+    <div id="div"></div>
+
+    <script>
+        var oBtn = document.getElementById('btn');
+        var oDiv = document.getElementById('div');
+        oBtn.onclick = function(){
+            var timer = setInterval(function(){
+                if(oDiv.offsetWidth >=500){
+                    clearInterval(timer);
+                }
+                oDiv.style.width = oDiv.offsetWidth + 2 +"px";
+            },30)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+                margin:0;
+                padding:0;
+            }
+            #box{
+                width: 500px;
+                height: 250px;
+                margin:100px auto;
+                position:relative;
+                overflow:hidden;
+            }
+            #box img{
+                width: 500px;
+                height: 250px;
+                /* display:none; */
+                float:left;
+            }
+            #pict{
+                width: 2000px;
+                height: 250px;
+                position:absolute;
+                left:0; 
+                top:0;
+                /* transition: left 1.5s ease; */
+            }
+            #list{
+                list-style:none;
+                position:absolute;
+                right:10px;
+                bottom:10px;
+            }
+            #list li{
+                float:left;
+                width: 30px;
+                height: 30px;
+                background: rgba(255,255,255,0.4);
+                border-radius:50%;
+                color:#000;
+                text-align:center;
+                line-height:30px;
+                margin-right:5px;
+            }
+            #list .hh{
+                background: rgba(210,0,0,0.6);
+            }
+        #next,#last{
+            width: 30px;
+            height: 30px;
+            background:  rgba(255,255,255,0.4);
+            position:absolute;
+            bottom:10px;
+            border-radius:50%;
+            text-align:center;
+            line-height:30px;
+        }
+        #next{
+            left:50px;
+        }
+        #last{
+            left:10px;
+        }
+    </style>
+       
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="pict">
+            <img class="pic1" src="../pic/1.jpg" alt="">
+            <img src="../pic/3 (1).jpg" alt="">
+            <img src="../pic/3 (2).jpg" alt="">
+            <img src="../pic/1.jpg" alt="">
+        </div>
+        <ul id="list">
+            <li class="hh">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        
+        <span id="next">&gt</span>
+        <span id="last">&lt</span>
+        
+    </div>
+    <script src="jslib.js"></script>
+    <script>
+        var oNext = document.getElementById('next');
+        var aLi = document.getElementsByTagName('li');
+        var oPict = document.getElementById('pict');
+        var aImg = oPict.getElementsByTagName('img');
+        var index = 0;
+        oNext.onclick = function(){
+            index++;
+            if(index == aImg.length){
+                oPict.style.left=0;
+                index=1;
+            }
+            change(index);
+        }
+        function change(num){
+            animate(oPict,{
+                left:-num*500
+            });
+        }
+    </script>
+</body>
+</html>

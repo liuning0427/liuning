@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #box{
+            width: 1024px;
+            height: 624px;
+            margin:0 auto;
+            /* overflow:hidden; */
+            position:relative;
+        }
+        #box-size{
+            width: 1024px;
+            height: 624px;
+        }
+        #box-size img{
+            width: 1024px;
+            height: 624px;
+            /* float:left; */
+            display:none;
+        }
+        #box .one{
+            display:block;
+        }
+        #list li{
+            list-style:none;
+            float:left;
+            width: 50px;
+            height: 5px;
+            background:#ccc;
+            opacity: 0.5;
+            color:#fff;
+            margin-right:10px;
+            border-radius:5px;
+            text-align:center;
+            line-height:20px;
+        }
+        #list{
+            position:absolute;
+            bottom:10px;
+            left:367px;
+        }
+        #list .it{
+            background:#828d98;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box-size">
+            <img class="one" src="../pic/4.jpg" alt="">
+            <img src="../pic/5.jpg" alt="">
+            <img src="../pic/6.jpg" alt="">
+            <img src="../pic/7.jpg" alt="">
+            <img src="../pic/8.jpg" alt=""> 
+        </div>
+        <ul id="list">
+            <li class="it"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oBox = document.getElementById('box');
+        var aImg = oBox.getElementsByTagName('img');
+        var idx = 0;        
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                }
+                this.className = "it";
+                aImg[this.index].className = "one";
+            }
+        }
+
+        // function change(num){
+        //     for(var j=0;j<aLi.length;j++){
+        //             aLi[j].className = "";
+        //             aImg[j].className = "";
+        //         }
+        //         aLi[idx].className = "it";
+        //         aImg[idx].className = "one";
+        // }
+    </script>
+</body>
+</html>

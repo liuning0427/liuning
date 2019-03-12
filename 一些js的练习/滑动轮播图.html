@@ -95,6 +95,7 @@
         var aLi = document.getElementsByTagName('li');
         var oPict = document.getElementById('pict');
         var oNext = document.getElementById('next');
+        var oLast = document.getElementById('last');
         var timer;
         var idx = 0;
         for(var i=0;i<aLi.length;i++){
@@ -117,6 +118,13 @@
                 idx = 0;
             }
             // this.className = 'hh';
+            change(idx);
+        }
+        oLast.onclick = function(){
+            idx--;
+            if(idx == -1){
+                idx=aLi.length-1;
+            }
             change(idx);
         }
         

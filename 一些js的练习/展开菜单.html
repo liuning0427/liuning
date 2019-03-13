@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        ul{
+            display:none;
+            width: 200px;
+            height: 100px;
+            border:2px solid #f2c122;
+        }
+        h3{
+            width: 204px;
+            height: 30px;
+            background: #f2c122;
+            text-align: center;
+            line-height: 30px;
+            color:#fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h3>管理区</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <h3>交流区</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script>
+        var aH3 = document.getElementsByTagName('h3');
+        var aUl = document.getElementsByTagName('ul');
+        for(var i=0;i<aH3.length;i++){
+          aH3[i].index = i;
+          aH3[i].onclick = function(){
+              var oUl = aUl[this.index];
+              if(oUl.style.display == "" || oUl.style.display == "none"){
+                oUl.style.display = "block";
+              }else if(oUl.style.display == "block"){
+                oUl.style.display = "none";
+              }
+          }
+        }
+        
+    </script>
+</body>
+</html>

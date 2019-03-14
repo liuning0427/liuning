@@ -24,7 +24,13 @@
                 </div>
                
             </li>
-            <li>two</li>
+            <li>two
+                <ul class="you">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </li>
             <li>three</li>
         </ul>
         <div id="seach">
@@ -43,8 +49,8 @@
 
 
     <script>
-        var aLi = document.getElementsByTagName('li');
         var oMe = document.getElementById('me');
+        var aLi = document.getElementsByTagName('li');
         var oAbm = document.getElementById('abm')
         for(var i=0;i<aLi.length;i++){
             aLi[i].index = i;

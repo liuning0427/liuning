@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#ffd2e9;
+    height: 3000px;
+}
+#warrap{
+    position:relative;
+    
+}
+#pic{
+    width: 100%;
+    height: 140px;
+    
+}
+#pic .pic1{
+    width: 200px;
+    height: 140px;
+    border-radius:40px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+#box-face{
+    width: 100%;
+    height: 50px;
+    background:#de8d99;
+    position:relative;
+}
+#left li{
+    list-style:none;
+    float:left;
+    margin-left:30px;
+    color:#eceef4;
+    line-height:50px;
+    font-style: inherit;
+    cursor: pointer;
+}
+#abm{
+    width: 500px;
+    height: 500px;
+    background:#de8d99;
+    opacity: 0.6;
+    display:none;
+    position: absolute;
+    top:100px;
+}
+#box-face{
+    position: relative;
+}
+#seach{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    float:left;
+}
+#seach .seach-one{
+    width: 270px;
+    height: 29px;
+    border:1px solid #deaac5;
+    margin-top:0;
+    outline: none;
+}
+#seach .seach-two{
+    width: 50px;
+    height: 31px;
+    background: #deaac5;
+    margin:0;
+    border:none;
+    color:#fff;
+    float:right;
+}
+#seach .seach-form{
+    height: 30px;
+    /* border-color:10px solid #000; */
+    /* background: #eceef4; */
+    float: left;
+    position:relative;
+}

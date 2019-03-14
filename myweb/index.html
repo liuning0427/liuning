@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>N</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="warrap">
+        <div id="head">
+             <div id="pic">
+                <img class="pic1" src="../pic/timgB1VL6P36.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <div id="box-face">
+        <ul id="left">
+            <li id="me">one
+                <div id="father">
+                     <div id="abm"></div>
+                </div>
+               
+            </li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+        <div id="seach">
+            <form action="" class="seach-form">
+                <input type="text" class="seach-one">
+                <button class="seach-two">搜索</button>
+            </form>
+        </div>
+       
+       
+    
+            
+    </div>
+
+
+
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var oMe = document.getElementById('me');
+        var oAbm = document.getElementById('abm')
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].style.color = "";
+                }
+                this.style.color = '#394962';
+                }
+                aLi[i].onmouseleave = function(){
+                    aLi[i].onmouseover = null;
+            }
+        }
+        oMe.onclick = function(){
+            if(oAbm.style.display == 'none' || oAbm.style.display == ""){
+                oAbm.style.display = 'block'
+            }else if(oAbm.style.display == 'block'){
+                oAbm.style.display = 'none';
+            }
+        }
+    
+    </script>
+</body>
+</html>

@@ -140,10 +140,6 @@ h2{
 #box-bg{
     position: relative;
 }
-#pic{
-    width: 1980px;
-    color:#adccad;
-}
 #box-bg img{
     width: 1600px;
     height: 980px;
@@ -165,4 +161,17 @@ h2{
     position:absolute;
     top:20px;
     left:20px;
+}
+#tu li{
+    list-style:none;
+    width: 20px;
+    height: 5px;
+    background: #fff;
+    opacity:0.6;
+    float:left;
+    margin-right:10px;
+}
+#tu{
+    position:absolute;
+    bottom:10px;
 }

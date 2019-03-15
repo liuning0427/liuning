@@ -8,69 +8,86 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div id="warrap">
-        <div id="head">
-             <div id="pic">
-                <img class="pic1" src="../pic/timgB1VL6P36.jpg" alt="">
-            </div>
+    <div id="head">
+            <div id="pic">
+            <img class="pic1" src="../pic/timgB1VL6P36.jpg" alt="">
         </div>
     </div>
     
     <div id="box-face">
-        <ul id="left">
-            <li id="me">one
-                <div id="father">
-                     <div id="abm"></div>
-                </div>
-               
-            </li>
-            <li>two
-                <ul class="you">
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                </ul>
-            </li>
-            <li>three</li>
-        </ul>
-        <div id="seach">
-            <form action="" class="seach-form">
-                <input type="text" class="seach-one">
+        <div id="warrap">
+            <ul id="left">
+                <li id="me">(= o ω o =)
+                    <div id="abm"></div>
+                </li>
+                <li id="yoo">(= > ω < =)</li>
+                    <ul id="yo">
+                        <li></li>
+                        <li class="zh"></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    
+                </li>
+                <li>(= - ω - =)</li>
+            </ul>
+            <div id="seach">
+             <form action="" class="seach-form">
+                <input type="text" class="seach-one"  placeholder="你想要看什么">
                 <button class="seach-two">搜索</button>
             </form>
+            </div>
+            <div id="cube"></div>
+            <img src="./pic/home-my.png" class="smail" alt="">
+            <h2>你也来看猫吗(>^ω^<)喵</h2>
         </div>
-       
-       
-    
-            
     </div>
-
+    <div id="box-bg">
+        <div id="pic">
+            <img src="./pic/timg.jpg" class="pict" alt="">
+            <img src="./pic/timgA110VXLO.jpg" alt="">
+            <img src="./pic/timg9UUKLX1S.jpg" alt="">
+            <img src="./pic/timg7OLYHCXR.jpg" alt="">
+            <img src="./pic/timgU4RBD5XB.jpg" alt="">
+        </div>
+        
+        <div class="big-cube"></div>
+    </div>
 
 
 
     <script>
         var oMe = document.getElementById('me');
-        var aLi = document.getElementsByTagName('li');
-        var oAbm = document.getElementById('abm')
-        for(var i=0;i<aLi.length;i++){
-            aLi[i].index = i;
-            aLi[i].onmouseover = function(){
-                for(var j=0;j<aLi.length;j++){
-                    aLi[j].style.color = "";
-                }
-                this.style.color = '#394962';
-                }
-                aLi[i].onmouseleave = function(){
-                    aLi[i].onmouseover = null;
-            }
-        }
+        var oLeft = document.getElementById('left')
+        var aLi = oLeft.getElementsByTagName('li');
+        var oAbm = document.getElementById('abm');
         oMe.onclick = function(){
             if(oAbm.style.display == 'none' || oAbm.style.display == ""){
-                oAbm.style.display = 'block'
+                oAbm.style.display = 'block';
             }else if(oAbm.style.display == 'block'){
                 oAbm.style.display = 'none';
             }
         }
+        var oYoo = document.getElementById('yoo');
+        var oYo = document.getElementById('yo');
+        var aLi = oYo.getElementsByTagName('li');
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                }
+                aLi[this.index].className = 'zh';
+            }
+        }
+        oYoo.onclick = function(){
+            if(oYo.style.display == "" || oYo.style.display == "none"){
+                oYo.style.display = "block";
+            }else if(oYo.style.display == "block"){
+                oYo.style.display = "none";
+            }
+        }
+        
     
     </script>
 </body>

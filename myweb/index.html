@@ -18,14 +18,14 @@
         <div id="warrap">
             <ul id="left">
                 <li id="me">(= o ω o =)
-                    <div id="abm"></div>
+                    <div id="abm"><h2>猫咪是我们的好朋友哦</h2></div>
                 </li>
                 <li id="yoo">(= > ω < =)</li>
                     <ul id="yo">
-                        <li></li>
-                        <li class="zh"></li>
-                        <li></li>
-                        <li></li>
+                        <li><img class="zh" src="./pic/timgA110VXLO.jpg" alt=""></li>
+                        <li><img src="./pic/timg9UUKLX1S.jpg" alt=""></li>
+                        <li> <img src="./pic/timg7OLYHCXR.jpg" alt=""></li>
+                        <li><img src="./pic/timgU4RBD5XB.jpg" alt=""></li>
                     </ul>
                     
                 </li>
@@ -33,7 +33,7 @@
             </ul>
             <div id="seach">
              <form action="" class="seach-form">
-                <input type="text" class="seach-one"  placeholder="你想要看什么">
+                <input type="text" class="seach-one"  placeholder="喵~">
                 <button class="seach-two">搜索</button>
             </form>
             </div>
@@ -43,20 +43,10 @@
         </div>
     </div>
     <div id="box-bg">
-        <div id="pic">
-            <ul id="tu">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div id="kuang">
             <img src="./pic/timg.jpg" class="pict" alt="">
-            <img src="./pic/timgA110VXLO.jpg" alt="">
-            <img src="./pic/timg9UUKLX1S.jpg" alt="">
-            <img src="./pic/timg7OLYHCXR.jpg" alt="">
-            <img src="./pic/timgU4RBD5XB.jpg" alt="">
         </div>
+        
         
         <div class="big-cube"></div>
     </div>
@@ -77,14 +67,14 @@
         }
         var oYoo = document.getElementById('yoo');
         var oYo = document.getElementById('yo');
-        var aLi = oYo.getElementsByTagName('li');
-        for(var i=0;i<aLi.length;i++){
-            aLi[i].index = i;
-            aLi[i].onmouseover = function(){
-                for(var j=0;j<aLi.length;j++){
-                    aLi[j].className = "";
+        var aImg = oYo.getElementsByTagName('img');
+        for(var i=0;i<aImg.length;i++){
+            aImg[i].index = i;
+            aImg[i].onmouseover = function(){
+                for(var j=0;j<aImg.length;j++){
+                    aImg[j].className = "";
                 }
-                aLi[this.index].className = 'zh';
+                this.className = 'zh';
             }
         }
         oYoo.onclick = function(){
@@ -94,6 +84,8 @@
                 oYo.style.display = "none";
             }
         }
+
+
         
     
     </script>

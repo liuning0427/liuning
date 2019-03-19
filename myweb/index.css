@@ -4,6 +4,7 @@
 }
 body{
     background:#fdd9db;
+    height: 20000px;
 }
 #pic{
     width: 100%;
@@ -133,6 +134,20 @@ h2{
 #yo .zh{
     width: 300px;
     height: 300px;
+}
+#three{
+    position:absolute;
+    z-index: 3;
+    left:230px;
+}
+#three li{
+    clear:both;
+    background: #adccaa;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    border:1px solid;
+    border-color:transparent #fff #fff #fff;
 }
 #box-bg{
     position: relative;

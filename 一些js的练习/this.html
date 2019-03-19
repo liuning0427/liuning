@@ -14,13 +14,41 @@
     </ul>
 
     <script>
-        var aLi = document.getElementsByTagName('li');
-        for(var i=0;i<aLi.length;i++){
-            aLi[i].onclick = function(e){
-                console.log(this);
-            }
-        }
+        // var aLi = document.getElementsByTagName('li');
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].onclick = function(e){
+        //         console.log(this);
+        //     }
+        // }
         
+
+        // var name = "clever coder";  
+        // var person = {  
+        //     name : "foocoder",  
+        //     hello : function(sth){  
+        //          var sayhello = function(sth) {  
+        //             console.log(this.name + " says " + sth);  
+        //         };  
+        //     sayhello(sth);  
+        //     }  
+        // }  
+        // person.hello("hello world");
+
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            // this.sleep = function(){
+            //     console.log(this.name + "hu");
+            
+        }
+        Person.prototype.sleep = function(){
+            console.log(this.name+this.age+ "~")
+        }
+
+        var per1 = new Person("ln",20);
+        per1.sleep();
+        var per2 = new Person("cxk",20);
+        per2.sleep();
     </script>
 </body>
 </html>

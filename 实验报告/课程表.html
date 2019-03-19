@@ -5,8 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+            border:1px solid #000;
+            text-align:center;
+        }
+        #table{
+            width: 498px;
+            height:186px;
+            border:1px solid #000;
+            position:relative;
+        }
+        .time li{
+            float:left;
+            width: 81px;
+            height: 50px;
+            line-height:50px;
+        }
+        .moring{
+            width: 498px;
+            height: 186px;
+            border:1px solid;
+            border-color:transparent transparent #000 transparent;
+        }
+        .moring li{
+            width: 81px;
+            height: 25px;
+        }
+        .moring >.one{
+            position:absolute;
+            top:52px;
+            left:83px;
+        }
+        .moring >.two{
+            position:absolute;
+            top:52px;
+            left:166px;
+        }
+        .moring >.three{
+            position:absolute;
+            top:52px;
+            left:249px;
+        }
+        .moring >.four{
+            position:absolute;
+            top:52px;
+            left:332px;
+        }
+        .moring >.five{
+            position:absolute;
+            top:52px;
+            left:415px;
+        }
+        
+    </style>
 </head>
 <body>
-    <div id="table"></div>
+    <div id="table">
+        <ul class="time">
+            <li></li>
+            <li>星期一</li>
+            <li>星期二</li>
+            <li>星期三</li>
+            <li>星期四</li>
+            <li>星期五</li>
+        </ul>
+        <div id="day">
+            <div class="moring">
+                <h2>课程表</h2>
+                <ul class="one">
+                    <li>数学</li>
+                    <li>语文</li>
+                    <li>英语</li>
+                    <li>政治</li>
+                    <li>化学</li>
+                </ul>
+                <ul class="two">
+                    <li>数学</li>
+                    <li>语文</li>
+                    <li>英语</li>
+                    <li>政治</li>
+                    <li>化学</li>
+                </ul>
+                <ul class="three">
+                    <li>数学</li>
+                    <li>语文</li>
+                    <li>英语</li>
+                    <li>政治</li>
+                    <li>化学</li>
+                </ul>
+                <ul class="four">
+                    <li>数学</li>
+                    <li>语文</li>
+                    <li>英语</li>
+                    <li>政治</li>
+                    <li>化学</li>
+                </ul>
+                <ul class="five">
+                    <li>数学</li>
+                    <li>语文</li>
+                    <li>英语</li>
+                    <li>政治</li>
+                    <li>化学</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

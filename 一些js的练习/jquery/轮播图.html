@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+</head>
+<body>
+        <style>
+                *{
+                    margin:0;
+                    padding:0;
+                }
+                #box{
+                    width: 500px;
+                    height: 250px;
+                    /* background:#ff0; */
+                    margin:100px auto;
+                    position:relative;
+                }
+                #box img{
+                    width: 500px;
+                    height: 250px;
+                    display:none;
+                }
+                #box .pic1{
+                    display:block;
+                }
+                #list{
+                    list-style:none;
+                    position:absolute;
+                    right:10px;
+                    bottom:10px;
+                }
+                #list li{
+                    float:left;
+                    width: 30px;
+                    height: 30px;
+                    background: rgba(255,255,255,0.4);
+                    border-radius:50%;
+                    color:#000;
+                    text-align:center;
+                    line-height:30px;
+                    margin-right:5px;
+                }
+                #list .hh{
+                    background: rgba(210,0,0,0.6)
+                }
+               #next,#last{
+                   width: 30px;
+                   height: 30px;
+                   background:  rgba(255,255,255,0.4);
+                   position:absolute;
+                   bottom:10px;
+                   border-radius:50%;
+                   text-align:center;
+                   line-height:30px;
+               }
+               #next{
+                   left:50px;
+               }
+               #last{
+                   left:10px;
+               }
+            
+            </style>
+        </head>
+        <body>
+            <div id="box">
+                <div class="pict">
+                    <img class="pic1" src="../pic/1.jpg" alt="">
+                    <img src="../pic/3 (1).jpg" alt="">
+                    <img src="../pic/3 (2).jpg" alt="">
+                </div>
+                <ul id="list">
+                    <li class="hh">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+                
+                <span id="next">&gt</span>
+                <span id="last">&lt</span>
+                
+            </div>
+
+            <script src="jquery-1.12.4.js"></script>
+            <script>
+                $("#list li").on("click",function(){
+                    $(this).addClass("hh").siblings().removeClass("hh");
+                    $(".pict img").eq($(this).index()).addClass("pic1").siblings().removeClass("pic1");
+                })
+            </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+            width: 80px;
+            height: 50px;
+            border:1px solid #000;
+            text-align:center;
+            line-height: 50px;
+            margin-right: 5px;
+            float:left;
+        }
+        #cube{
+            position:relative;
+            width: 600px;
+            height: 200px;
+            margin: 100px auto;
+        }
+        #hh div{
+            width: 400px;
+            height: 250px;
+            border:1px solid #000;
+            position:absolute;
+            top:51px;
+            display:none;
+        }
+        #hh .big{
+            display:block;
+        }
+        .one{
+            background: #0f00aa;
+            color:#fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="cube">
+        <ul id="list">
+            <li class="one">实事</li>
+            <li>体育</li>
+            <li>娱乐</li>
+        </ul>
+        <div id="hh">
+            <div class="big">实事</div>
+            <div>体育</div>
+            <div>娱乐</div>
+        </div>
+        
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("#list li").on("click",function(){
+            //按钮变
+            $(this).addClass("one").siblings().removeClass("one");
+            //内容变
+            $("#hh div").eq($(this).index()).addClass("big").siblings().removeClass("big");
+        })
+    </script>
+</body>
+</html>

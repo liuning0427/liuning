@@ -86,11 +86,32 @@
 
             <script src="jquery-1.12.4.js"></script>
             <script>
+                var iNow = 0;
+                var $this = $(this).index();
+                var $li = $("#list li");
+                var $img = $(".pict img");
                 $("#list li").on("click",function(){
-                    $(this).addClass("hh").siblings().removeClass("hh");
-                    $(".pict img").eq($(this).index()).addClass("pic1").siblings().removeClass("pic1");
+                    var $index = $(this).index();
+                    change($index);
                 })
-                
+                function change(num){
+                    $li.eq(num).addClass("hh").siblings().removeClass("hh");
+                    $img.eq(num).eq($this).addClass("pic1").siblings().removeClass("pic1");
+                }
+                $("#next").on("click",function(){
+                    iNow++;
+                    if(iNow == $li.length){
+                        iNow = 0;
+                    }
+                    change(iNow);
+                })
+                $("#last").on("click",function(){
+                    iNow--;
+                    if(iNow == -1){
+                        iNow = $li.length;
+                    }
+                    change(iNow);
+                })
 
             </script>
 </body>

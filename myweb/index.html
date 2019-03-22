@@ -29,8 +29,8 @@
                     </ul>
                     
                 </li>
-                <li>(= - ω - =)
-                    <ul id="three">
+                <li id="eee">(= - ω - =)
+                    <ul class="three">
                         <li>小</li>
                         <li>猫</li>
                         <li>咪</li>
@@ -56,8 +56,6 @@
         
         <div class="big-cube"></div>
     </div>
-
-
 
     <script>
         var oMe = document.getElementById('me');
@@ -90,7 +88,11 @@
                 oYo.style.display = "none";
             }
         }
-
+        var oEee = document.getElementById('eee');
+        var aThree = oEee.getElementsByTagName('three');
+        oEee.onclick = function(){
+            aThree.style.display = 'block';
+        }
 
         
     

@@ -135,12 +135,13 @@ h2{
     width: 300px;
     height: 300px;
 }
-#three{
+#left .three{
     position:absolute;
     z-index: 3;
     left:230px;
+    
 }
-#three li{
+.three li{
     clear:both;
     background: #adccaa;
     width: 100px;
@@ -148,6 +149,7 @@ h2{
     text-align: center;
     border:1px solid;
     border-color:transparent #fff #fff #fff;
+    /* display:none; */
 }
 #box-bg{
     position: relative;

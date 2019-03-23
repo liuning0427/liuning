@@ -13,76 +13,146 @@
         body{
             height: 2000px;
         }
-        #cube{
+        h2{
             margin:50px auto;
-            width: 1200px;
-            height: 900px;
+            width: 1000px;
+            height: 150px;
             font-size:20px;
             color:#fff;
-        }
-        #cube .cube-head{
-            width: 1200px;
-            height: 150px;
-            background: #7781aa;
             text-align:center;
             line-height:150px;
         }
-        #cube .cube-face{
-            width: 1200px;
-            height: 150px;
+       .cube-head{
+            background: #7781aa; 
+        }
+        .cube-face{
             background: #adccaa;
+            margin-top:50px;
+        }
+        #pic{
+            width: 1000px;
+            /* height: 500px; */
+            margin:30px auto;
+        }
+        .p1{
+            height: 100%;
+            width: 100%;
+        }
+        .p2{
+            width: 780px;
+            display:none;
+        }
+        .p3{
+            width: 480px;
+            display:none;
+        }
+        #cube{
+            width: 1000px;
+            margin:0 auto;
             text-align:center;
-            line-height:150px;
-            margin-top:50px;
         }
-        img{
-            width: 1200px;
-            height: 500px;
-            margin-top:50px;
-        }
-        #box li{
+        .left{
+            background: #adccaa;
+            width: 550px;
+            height: 300px;
             float: left;
-            list-style:none;
+            display:table;
         }
-        #box .box-left{
-            background: #adccaa;
-            width: 700px;
-            height: 400px;
-            text-align:center;
+        p{
+            display:table-cell;
+            vertical-align: middle;
+            text-align: center;
         }
-        #box .box-right{
+        .right{
             background: #7781aa;
-            width: 450px;
-            height: 400px;
+            width: 350px;
+            height: 300px;
             margin-left:50px;
+            float:right;
+            display:table;
         }
-        @media screen and (max-width:1200px){
+        @media screen and (max-width:1000px){
+            h2{
+                width: 100%;
+            }
+            #pic{
+                width: 100%;
+            }
             #cube{
                 width: 100%;
             }
-            #box .box-left,#box .box-right{
+            .left,.right{
                 width: 100%;
             }
-            #box .box-right{
+            .right{
                 margin-left:0;
+            }
+        }
+        @media screen and (max-width:780px){
+            h2{
+                width: 100%;
+            }
+            #cube{
+                width: 100%;
+            }
+            #pic{
+                width: 100%;
+            }
+            .right{
+                margin-left:0;
+            }
+            .p1{
+                display:none;
+            }
+            .p2{
+                display:block;
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:480px){
+            h2{
+                width: 100%;
+            }
+            #cube{
+                width: 100%;
+            }
+            #pic{
+                width: 100%;
+            }
+            .right{
+                margin-left:0;
+            }
+            .p1{
+                display:none;
+            }
+            .p2{
+                display:none;
+            }
+            .p3{
+                display:block;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <h2 class="cube-head">~o( =∩ω∩= )</h2>
+    <h2 class="cube-face">O(∩_∩)O</h2>
+    <div id="pic">
+        <img class="p1" src="./pic/pic.jpg" alt="">
+        <img class="p2" src="./pic/timg7OLYHCXR.jpg" alt="">
+        <img class="p3" src="./pic/timgU4RBD5XB.jpg" alt="">
+    </div>
     <div id="cube">
-        <div class="cube-head">~o( =∩ω∩= )</div>
-        <div class="cube-face">O(∩_∩)O</div>
-        <img src="./pic/pic.jpg" alt="">
-        <ul id="box">
-            <li class="box-left">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
-                                    啊啊啊啊啊啊啊啊啊啊
-                                        啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
-                                        啊啊啊啊啊啊啊啊啊啊啊啊</li>
-            <li class="box-right">哈哈哈哈哈哈哈哈哈哈哈哈或或或
-                                哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
-                                哈哈哈或或或或或或或或</li>
-        </ul>
+        <div class="left">
+            <p>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+                                啊啊啊啊啊啊啊啊啊啊
+                                    啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+                                    啊啊啊啊啊啊啊啊啊啊啊啊</p></div>
+        <div class="right">
+            <p>哈哈哈哈哈哈哈哈哈哈哈哈或或或
+                            哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                            哈哈哈或或或或或或或或</p></div>
     </div>
 </body>
 </html>

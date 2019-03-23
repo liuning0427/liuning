@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            height: 2000px;
+        }
+        #cube{
+            margin:50px auto;
+            width: 1200px;
+            height: 900px;
+            font-size:20px;
+            color:#fff;
+        }
+        #cube .cube-head{
+            width: 1200px;
+            height: 150px;
+            background: #7781aa;
+            text-align:center;
+            line-height:150px;
+        }
+        #cube .cube-face{
+            width: 1200px;
+            height: 150px;
+            background: #adccaa;
+            text-align:center;
+            line-height:150px;
+            margin-top:50px;
+        }
+        img{
+            width: 1200px;
+            height: 500px;
+            margin-top:50px;
+        }
+        #box li{
+            float: left;
+            list-style:none;
+        }
+        #box .box-left{
+            background: #adccaa;
+            width: 700px;
+            height: 400px;
+            text-align:center;
+        }
+        #box .box-right{
+            background: #7781aa;
+            width: 450px;
+            height: 400px;
+            margin-left:50px;
+        }
+        @media screen and (max-width:1200px){
+            #cube{
+                width: 100%;
+            }
+            #box .box-left,#box .box-right{
+                width: 100%;
+            }
+            #box .box-right{
+                margin-left:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="cube">
+        <div class="cube-head">~o( =∩ω∩= )</div>
+        <div class="cube-face">O(∩_∩)O</div>
+        <img src="./pic/pic.jpg" alt="">
+        <ul id="box">
+            <li class="box-left">啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+                                    啊啊啊啊啊啊啊啊啊啊
+                                        啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+                                        啊啊啊啊啊啊啊啊啊啊啊啊</li>
+            <li class="box-right">哈哈哈哈哈哈哈哈哈哈哈哈或或或
+                                哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                                哈哈哈或或或或或或或或</li>
+        </ul>
+    </div>
+</body>
+</html>

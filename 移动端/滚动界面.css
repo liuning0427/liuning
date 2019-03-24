@@ -14,19 +14,36 @@ body{
     left:0;
     right:0;
 }
-.page-1-img{
+.page-1-img1{
     width: 260px;
     position:absolute;
     top:3%;
     left:50%;
     margin-left:-130px;
 }
-.page-2-img{
+.page-1-img2{
     width: 185px;
     position:absolute;
     left:50%;
-    margin-left:-94.5px;
-    bottom:92px;
+    margin-left:-92.5px;
+    bottom:100px;
+    animation:moveFromLeft 0.6s ease forwards;
+}
+.page-1-img3{
+    width: 25px;
+    height: auto;
+    position:absolute;
+    left:50%;
+    margin-left:-12.5px;
+    top:92%;
+}
+.iconMove{
+    animation:iconMove 1.2s ease infinite;
+}
+@keyframes moveFromLeft{
+    0%{
+        transform: translateX(-100%);
+    }
 }
 .movefromtop{
     animation:moveFromTop 0.6s ease forwards;
@@ -35,4 +52,80 @@ body{
     0%{
         transform:translateY(-100%);
     }
+}
+@keyframes iconMove{
+    0%{
+        transform: translateY(100%);
+        opcaity:0;
+    }
+    50%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+#page-2{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: #9261BF;
+}
+.page-2-img1{
+    width: 158px;
+    height: auto;
+    position:absolute;
+    top:4%;
+    left:50%;
+    margin-left:-79px;
+}
+.page-2-img2{
+    width: 240px;
+    height: 240px;
+    position:absolute;
+    top:28%;
+    left:50%;
+    margin-left:-120px;
+}
+.circleMove{
+    animation:circleMove 2s ease forwards;
+}
+@keyframes circleMove{
+    0%{
+        transform: translateY(-100%);
+    }
+    20%{
+        transform: translateY(30%);
+    }
+    50%{
+        transform: translateY(-20%);
+    }
+}
+.page-2-img3{
+    width: 240px;
+    height: 220px;
+    position:absolute;
+    top:35%;
+    left:50%;
+    margin-left:-120px;
+}
+.page-2-img4{
+    width: 248px;
+    height:auto;
+    position:absolute;
+    top:10%;
+    left:50%;
+    margin-left:-140px;
+}
+.page-2-img5{
+    width: 140px;
+    height: 16px;
+    position:absolute;
+    top:80%;
+    left:50%;
+    margin-left:-70px;
 }

@@ -121,6 +121,14 @@ body{
     left:50%;
     margin-left:-140px;
 }
+.moveScale{
+    animation: moveScale 0.6s ease forwards;
+}
+@keyframes moveScale{
+    0%{
+        transform: scale(0.5);
+    }
+}
 .page-2-img5{
     width: 140px;
     height: 16px;

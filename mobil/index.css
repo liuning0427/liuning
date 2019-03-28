@@ -23,6 +23,9 @@ input{
     /* background: #ff0000; */
     opacity: 0.7;
 }
+#page-1 .null{
+    height: 40%;
+}
 #page-1 p{
     text-align: center;
     font-size:17px;
@@ -86,9 +89,23 @@ input{
 /* 第一页页脚开始 */
 #box{
     width: 100%;
-    height: 40px;
+    height: 45px;
     background: #ccc;
     opacity: 0.7;
     position:absolute;
     bottom:0;
+}
+#box .adv{
+    display:flex;
+}
+#box li{
+    color:#000;
+    flex:1;
+    text-align: center;
+    line-height: 45px;
+    list-style:none;
+    border:1px solid #eceef4;
+}
+.adv .click{
+    background: #eceef4;
 }

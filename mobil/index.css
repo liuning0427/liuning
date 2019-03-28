@@ -24,8 +24,7 @@ input{
     opacity: 0.7;
 }
 #page-1 p{
-    line-height: 600px;
-    text-align:center;
+    text-align: center;
     font-size:17px;
     color:rgba(111,111,111.7);
 }
@@ -41,11 +40,11 @@ input{
     flex:1;
 }
 .cube .foot{
-    flex:2;
-    line-height:50px;
+    flex:3;
     font-size:20px;
+    /* background: #000000; */
 }
-.cube .btn{
+.foot .btn{
     width: 80px;
     height: 60px;
     background: #f48398;
@@ -54,11 +53,10 @@ input{
     margin-left:16%;
     color:#f2f2f2;
 }
-.cube .text{
+.foot .text{
     position:absolute;
     top:50px;
-    left:50%;
-    margin-left:-60px;
+    left:37%; 
     font-size:15px;
     background: #f48398;
     border:none;
@@ -68,8 +66,8 @@ input{
     height: 60px;
     background: #fffffa;
     position:absolute;
-    top:10px;
-    left:40px;
+    top:12%;
+    left:10%;
 }
 #page-1 .word{
     margin-top:90px;
@@ -88,8 +86,9 @@ input{
 /* 第一页页脚开始 */
 #box{
     width: 100%;
-    height: 20px;
+    height: 40px;
     background: #ccc;
-    position: absolute;
-    bottom: 0;
+    opacity: 0.7;
+    position:absolute;
+    bottom:0;
 }

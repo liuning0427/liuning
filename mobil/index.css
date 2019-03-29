@@ -109,3 +109,12 @@ input{
 .adv .click{
     background: #eceef4;
 }
+/* 第一页页脚结束 */
+
+/* 第二页开始 */
+.hide{
+    display:none;
+} 
+.moveToLeft{
+    animation: moveToLeft 1s ease forwards;
+}

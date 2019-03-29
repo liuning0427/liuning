@@ -10,3 +10,8 @@ for(var i=0;i<aLi.length;i++){
         this.className = "click";
     }
 }
+var iNow = 1;
+$(document).on("swipeLeft",function(){
+    // console.log(111);
+    $('.page-1'+iNow).attr("class","page-"+iNow+)
+})

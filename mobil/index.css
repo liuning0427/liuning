@@ -39,15 +39,15 @@ input{
     top:0;
     display:flex;
 }
-.cube .head{
+#page-1 .cube .head{
     flex:1;
 }
-.cube .foot{
+#page-1 .cube .foot{
     flex:3;
     font-size:20px;
     /* background: #000000; */
 }
-.foot .btn{
+#page-1 .foot .btn{
     width: 80px;
     height: 60px;
     background: #f48398;
@@ -56,7 +56,7 @@ input{
     margin-left:16%;
     color:#f2f2f2;
 }
-.foot .text{
+#page-1 .foot .text{
     position:absolute;
     top:50px;
     left:37%; 
@@ -64,7 +64,7 @@ input{
     background: #f48398;
     border:none;
 }
-.head .pic{
+#page-1 .head .pic{
     width: 60px;
     height: 60px;
     background: #fffffa;
@@ -117,4 +117,17 @@ input{
 } 
 .moveToLeft{
     animation: moveToLeft 1s ease forwards;
+}
+@keyframes moveToLeft{
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.moveToRight{
+    animation: moveToRight 1s ease forwards;
+}
+@keyframes moveToRight{
+    100%{
+        transform: translateX(100%);
+    }
 }

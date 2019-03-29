@@ -13,5 +13,6 @@ for(var i=0;i<aLi.length;i++){
 var iNow = 1;
 $(document).on("swipeLeft",function(){
     // console.log(111);
-    $('.page-1'+iNow).attr("class","page-"+iNow+)
+    $('#page-'+iNow).attr("id","page-"+iNow+"moveToLeft");
+    $('#page-'+(iNow+1)).attr("id","page-"+(iNow+1)+" moveToRight");
 })

@@ -114,9 +114,14 @@ input{
 /* 第二页开始 */
 .hide{
     display:none;
+   
+} 
+.page-2{
+    background: #cccccc;
     width: 100%;
     height: 100%;
-} 
+    float:left;
+}
 .moveToLeft{
     animation: moveToLeft 1s ease forwards;
 }

@@ -23,3 +23,4 @@ $(document).on("swipeLeft",function(){
 })
 
 
+

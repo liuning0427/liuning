@@ -21,6 +21,16 @@ $(document).on("swipeLeft",function(){
         iNow++;
     },600);
 })
+$(document).on("swipeRight",function(){
+    // console.log(111);
+    $('.page-'+iNow).attr("class","page-"+iNow+" moveToRight");
+    // $('.page-'+(iNow-1)).attr("class","page-"+(iNow-1)+" moveToRight");
+    setTimeout(function(){
+        $('.page-'+iNow).children().addClass('hide');
+        $('.page-'+(iNow-1)).removeClass('hide');
+        iNow--;
+    },600);
+})
 
 
 

@@ -34,3 +34,5 @@ $(document).on("swipeRight",function(){
 
 
 
+
+

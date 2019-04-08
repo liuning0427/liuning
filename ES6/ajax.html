@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        //创建XMLHttpRequest 做兼容性处理
+        //创建XMLHttpRequest 做兼容性处理：
         var XMLHttpRequest;
         if(window.XMLHttpRequest){ //除IE5,IE6
             xmlhttp =  new XMLHttpRequest;
@@ -16,12 +16,11 @@
             xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
         }
         
-        //向服务器发送请求
+        //向服务器发送请求：
         xmlhttp.open("GET","http://www.baidu.com",true);
         xmlhttp.send();
 
-
-        //服务器响应
+        //服务器响应：
     </script>
 </body>
 </html>

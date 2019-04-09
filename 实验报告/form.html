@@ -22,8 +22,8 @@
        <br>
        你喜欢的火锅蘸料是什么？
        <br>
-            <input type="radio" name="it">麻酱
-            <input type="radio" name="it">香油
+            <input type="radio" name="its">麻酱
+            <input type="radio" name="its">香油
             <br>
         你喜欢吃什么蔬菜？（可多选）
         <br>
@@ -35,9 +35,15 @@
             <input type="radio">其他
         <br>
         <button>重置</button>
-        <button>提交</button>
+        <button id="btn">提交</button>
    </form>
     </div>
+    <script>
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            alert("提交成功");
+        }
+    </script>
    
 </body>
 </html>

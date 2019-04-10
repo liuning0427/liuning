@@ -1,6 +1,8 @@
 const path = require('path');
+const glob = require('glob');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const 
 module.exports = {
     mode:'development',
     entry:{
@@ -16,7 +18,11 @@ module.exports = {
                 test:/\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: [{
+                        loader:"css-loader",
+                        options:{importLoaders:1}
+                    },"postcss-loader"]
+                        // "css-loader"
                 })
             },
             {
@@ -28,6 +34,9 @@ module.exports = {
                         outputPath:'img/'
                     }
                 }]
+            },{
+                test:/\.(htm|html)$/i,
+                loader:'html-withimg-loader'
             }
         ]
     },

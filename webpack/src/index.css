@@ -1,3 +1,4 @@
 body{
     background: #cccccc url(./img/pic.jpg);
+    transform: rotate(10deg);
 }

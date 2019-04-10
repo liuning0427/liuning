@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var Person = {
+        //     name:'ln',
+        //     age:'20',
+        //     eat:function(){
+        //         console.log('麻辣烫')
+        //     }
+        // }
+        // Person.eat();
+        
+
+        function person(name){
+            this.name = name;
+        }
+        person.prototype.eat = function(){
+            console.log(this.name + '吃麻辣烫');
+        }
+        person.prototype.sleep = function(){
+            console.log(this.name + "呼呼呼")
+        }
+
+        let p1 = new person("ln");
+        let p2 = new person("ly");
+        p2.sleep();
+        p1.eat();
+
+
+
+
+        
+    </script>
+</body>
+</html>

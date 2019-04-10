@@ -2,7 +2,8 @@ const path = require('path');
 const glob = require('glob');
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const 
+const PurifyCSSPlugin = require('purifycss-webpack');
+const webpack = require('webpack');
 module.exports = {
     mode:'development',
     entry:{
@@ -37,6 +38,15 @@ module.exports = {
             },{
                 test:/\.(htm|html)$/i,
                 loader:'html-withimg-loader'
+            },{
+                test:/\.js$/,
+                use:[{
+                    loader:'babel-loader',
+                    options:{
+                        presets:["@babel/preset-env"]
+                    }
+                }],
+                exclude:/node_modules/
             }
         ]
     },
@@ -49,7 +59,12 @@ module.exports = {
             hash:true,
             template:'./src/index.html'
         }),
-        new ExtractTextPlugin('index.css')
+        new ExtractTextPlugin('index.css'),
+        new PurifyCSSPlugin({
+            // Give paths to parse for rules. These should be absolute!
+            paths: glob.sync(path.join(__dirname, 'app/*.html')),
+        }),
+        new webpack.BannerPlugin('猪咪')
     ],
     devServer:{
         contentBase:path.resolve(__dirname,'dist'),

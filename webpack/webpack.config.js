@@ -28,10 +28,6 @@ module.exports = {
                         outputPath:'img/'
                     }
                 }]
-            },
-            {
-                text:/\.(htm|html)/i,
-                use:['html-withimg-loader']
             }
         ]
     },

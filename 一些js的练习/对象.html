@@ -18,22 +18,53 @@
         // Person.eat();
         
 
-        function person(name){
-            this.name = name;
-        }
-        person.prototype.eat = function(){
-            console.log(this.name + '吃麻辣烫');
-        }
-        person.prototype.sleep = function(){
-            console.log(this.name + "呼呼呼")
-        }
+        // function person(name){
+        //     this.name = name;
+        // }
+        // person.prototype.eat = function(){
+        //     console.log(this.name + '吃麻辣烫');
+        // }
+        // person.prototype.sleep = function(){
+        //     console.log(this.name + "呼呼呼")
+        // }
 
-        let p1 = new person("ln");
-        let p2 = new person("ly");
-        p2.sleep();
-        p1.eat();
+        // let p1 = new person("ln");
+        // let p2 = new person("ly");
+        // p2.sleep();
+        // p1.eat();
 
 
+        // function Person(name){
+        //     this.name=name;
+        // }
+
+        // Person.prototype.eat = function(){
+        //     console.log(this.name + '火锅')
+        // }
+        // let p1 = new Person('ln');
+        // let p2 = new Person('lnn');
+       
+        // p1.eat();
+
+        //继承
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.eat = function(){
+            console.log(this.name+this.age+"吃吃吃");
+        }
+        var p1 = new Person('刘凝',"20");
+        function newPerson(name,age){
+            Person.call(this,name,age);
+        }
+        
+        // console.log(p2);
+        // p2.eat();
+        newPerson.prototype = new Person();
+        newPerson.prototype.constructor = newPerson;
+        var p2 = new newPerson("cxk","20");
+        p2.eat();
 
 
         

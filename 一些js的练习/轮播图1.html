@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #cube{
+            width: 1000px;
+            height: 750px;
+            margin:100px auto;
+            overflow:hidden;
+            position:relative;
+        }
+        #head{
+            width: 4000px;
+        }
+        img{
+            width: 1000px;
+            height: 750px;
+            float:left;
+        }
+        #num li{
+            width: 40px;
+            height: 8px;
+            /* border-radius:50%; */
+            background: #f2f2f2;
+            opacity: 0.5;
+            float:left;
+            list-style:none;
+            margin-right: 20px;
+        }
+        #num .duck{
+            background: #f00;
+            opacity: 0.8;
+        }
+        #num{
+            position:absolute;
+            bottom:10px;
+            left:50%;
+            margin-left:-90px;
+        }
+        #next,#last{
+            color: #ccc;
+            opacity: 0.7;
+            position: absolute;
+            top:50%;
+            margin-top:-25px;
+            width: 50px;
+            height: 50px;
+            font-size:50px;
+            text-align: center;
+            line-height: 50px;
+        }
+        #next{
+            right:20px;
+        }
+        #last{
+            left:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cube">
+        <div id="head">
+            <img src="./pic/timg7OLYHCXR.jpg" alt="">
+            <img src="./pic/timg9UUKLX1S.jpg" alt="">
+            <img src="./pic/timgU4RBD5XB.jpg" alt="">
+        </div>
+        <ul id="num">
+            <li class="duck"></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div id="next">&gt;</div>
+        <div id="last">&lt;</div>
+    </div>
+
+    <script>
+        var aLi = document.getElementsByTagName('li');
+        var aImg = document.getElementsByTagName('img');
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].index = i;
+            aLi[i].onmouseover = function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                }
+                this.className = "duck";
+                aImg[this.index].className = 
+            }
+        }
+    
+       
+    </script>
+    
+
+</body>
+</html>

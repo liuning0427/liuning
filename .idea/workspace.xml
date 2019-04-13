@@ -61,8 +61,8 @@
       <file leaf-file-name="布局练习2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/text/布局练习2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+            <state relative-caret-position="384">
+              <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
               </folding>
@@ -165,9 +165,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/ES6/node_modules" />
+    <handled-path value="$PROJECT_DIR$/webpack/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="780" />
-    <option name="width" value="1091" />
+    <option name="width" value="1092" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
@@ -175,7 +179,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,16 +201,11 @@
               <item name="liuning" type="462c0819:PsiDirectoryNode" />
               <item name="tmalll" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="liuning" type="b2602c69:ProjectViewProjectNode" />
-              <item name="liuning" type="462c0819:PsiDirectoryNode" />
-              <item name="tmalll" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -331,6 +329,7 @@
       <workItem from="1550806465327" duration="10332000" />
       <workItem from="1550835931406" duration="443000" />
       <workItem from="1550883655800" duration="1287000" />
+      <workItem from="1555124899629" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="四字网页">
       <created>1549962199488</created>
@@ -483,26 +482,25 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150339000" />
+    <option name="totallyTimeSpent" value="150340000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1431" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1431" height="772" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21030346" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.15892054" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.22188905" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -717,8 +715,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/text/布局练习2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="35" column="28" lean-forward="true" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        <state relative-caret-position="384">
+          <caret line="45" column="21" lean-forward="true" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
           <folding>
             <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>

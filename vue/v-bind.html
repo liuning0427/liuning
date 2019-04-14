@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .color{
+            background: #3dae33;
+            width: 100%;
+            height: 40px;
+            /* border:1px solid #fff; */
+        }
+        #app{
+            width: 100%;
+            height: 120px;
+            background: #cccccc;
+        }
+        .aa{
+            width: 100%;
+            height: 40px;
+            /* border:1px solid #000; */
+            display:flex;
+        }
+        .aa span{
+            flex:1;
+            border:1px solid #000;
+            text-align: center;
+            line-height:40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div :class="{color:isColor}" @click="color1" class="aa">
+            <span>衣服</span>
+            <span>2000</span>
+        </div>
+        <div :class="{color:isColor1}" @click="color2"  class="aa">
+            <span>裤子</span>
+            <span>100</span>
+        </div>
+        <div :class="{color:isColor2}" @click="color3" class="aa">
+            <span>鞋子</span>
+            <span>1000</span>
+        </div>
+        总价为：<input type="number" v-on="onClickHandler">
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                isColor:false,
+                isColor1:false,
+                isColor2:false,
+            },
+            methods:{
+                color1(){
+                    this.isColor = !this.isColor
+                },
+                color2(){
+                    this.isColor1 = !this.isColor1
+                },
+                color3(){
+                    this.isColor2 = !this.isColor2
+                },
+            }
+        })
+    </script>
+</body>
+</html>

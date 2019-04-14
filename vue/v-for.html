@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <div v-for="(item,index) in arr">
+            {{ item }}
+        </div> -->
+        <div v-for="user in list">
+            {{ user.name }}
+            {{ user.age }}
+            <button @click="showName(user)">1111</button>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                arr:['ln','lyd','cyh'],
+                list:[
+                    {
+                        name:'ln',
+                        age:20
+                    },{
+                        name:'lyd',
+                        age:19
+                    },{
+                        name:'cyh',
+                        age:21
+                    }
+                ]
+            },
+            // 排列
+            computed:{
+                listSort(){
+                    return this.list.sort(function(a,b){
+                        return a.age-b.age;
+                    })
+                }
+            },
+            methods:{
+                showName(obj){
+                    console.log(obj);
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

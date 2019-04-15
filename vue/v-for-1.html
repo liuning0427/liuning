@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <div v-for="item in arr">
+            {{ item }}o
+        </div> -->
+        <div v-for="item in listSort">
+            {{ item.name}}
+            {{ item.age }}
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let line = new Vue({
+            el:"#app",
+            data:{
+                // arr:['ln','lyd','ccy','cyh','ljn'],
+                list:[
+                    {
+                        name:'ln',
+                        age:20
+                    },{
+                        name:'lyd',
+                        age:19
+                    },{
+                        name:'cyh',
+                        age:21
+                    }
+                ]
+            },
+            computed:{
+                listSort(){
+                    return this.list.sort((a,b) => {
+                        return b.age - a.age;
+                    })
+                }
+            }
+        })
+    
+    </script>
+
+
+
+
+</body>
+</html>

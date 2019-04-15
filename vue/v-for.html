@@ -8,49 +8,47 @@
 </head>
 <body>
     <div id="app">
-        <!-- <div v-for="(item,index) in arr">
-            {{ item }}
-        </div> -->
-        <div v-for="user in list">
+        {{ ifm }}
+        <div v-for="user in listSort">
             {{ user.name }}
             {{ user.age }}
-            <button @click="showName(user)">1111</button>
+        </div>
+        <div v-for="user in cat">
+            {{ user }}
         </div>
     </div>
     <script src="vue.js"></script>
     <script>
-        new Vue({
-            el:"#app",
-            data:{
-                arr:['ln','lyd','cyh'],
-                list:[
-                    {
-                        name:'ln',
-                        age:20
-                    },{
-                        name:'lyd',
-                        age:19
-                    },{
-                        name:'cyh',
-                        age:21
-                    }
-                ]
-            },
-            // 排列
-            computed:{
-                listSort(){
-                    return this.list.sort(function(a,b){
-                        return a.age-b.age;
-                    })
-                }
-            },
-            methods:{
-                showName(obj){
-                    console.log(obj);
-                }
+     let a = new Vue({
+         el:"#app",
+         data:{
+             ifm:"hahah",
+             arr:['html','css','js'],
+             list:[
+                 {
+                     name:'ln',
+                     age:10
+                 },{
+                     name:'hh',
+                     age:20
+                 },{
+                     name:'ee',
+                     age:3
+                 }
+             ],
+             cat:{
+                 name:'zhaocai',
+                 age:1
+             }
+         },
+         computed:{
+             listSort(){
+                return this.list.sort((a,b) => {
+                    return a.age - b.age;
+                })             
             }
-            
-        })
+         }
+     })
     </script>
 </body>
 </html>

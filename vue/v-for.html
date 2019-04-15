@@ -12,7 +12,7 @@
         <div v-for="user in listSort">
             {{ user.name }}
             {{ user.age }}
-            <button>show</button>
+            <button v-on:click="show(user)">show</button>
         </div>
         <div v-for="user in cat">
             {{ user }}
@@ -47,6 +47,11 @@
                 return this.list.sort((a,b) => {
                     return a.age - b.age;
                 })             
+            }
+         },
+         methods:{
+            show(n){
+                console.log(n);
             }
          }
      })

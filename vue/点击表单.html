@@ -11,18 +11,21 @@
         .color{
             background: #d4cca1;
         }
+        .color1{
+            background: #d4cca1;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <table class="table table-bordered text-center" :class="{color:isColor}" @click="color" >
+        <table class="table table-bordered text-center" v-bind:class="{color:isColor}" v-on:click="color" >
         <thead >
            <td>选择</td>
            <td>名称</td>
            <td>价格</td>
            <td>删除</td>
         </thead>
-        <tbody :class="{color:isColor1}" @click="color1">
+        <tbody :class="{color1:isColor1}" @click="color1">
             <tr v-for="(item,index) in list" :key="index">
                 <td></td>
                 <td>{{ item.name }}</td>
@@ -55,10 +58,10 @@
             },
             methods:{
                color(){
-                   this.isColor = !this.isColor
+                   this.isColor = !this.isColor;
                },
                color1(){
-                   this.isColor1 = !this.isColor1
+                   this.isColor1 = !this.isColor1;
                },
             }
         })

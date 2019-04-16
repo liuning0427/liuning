@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red{
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:class="{red: isRed}" v-on:click="IsRed">哈哈</div>
+        <div v-bind:style="styleObj">haha</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                isRed:true,
+                styleObj:{
+                    background:"#1234567",
+
+                }
+            },
+            methods:{
+                IsRed(){
+                    this.isRed = !this.isRed;
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

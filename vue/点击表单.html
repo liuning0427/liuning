@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        .red{
+        .red {
             background: #f1aa23;
         }
     </style>
 </head>
+
 <body>
     <div id="app">
         <h1 class="text-center">商品</h1>
+        <form action="" class="text-center" v-on:click="showArr">
+            <input type="text">
+            <button>搜索</button>
+        </form>
+        <br>
         <form class="form-inline text-center">
             <label for="inputName">名称</label>
             <input type="text" v-model="proName">
@@ -23,66 +30,96 @@
             <input type="number" v-model="proPrice">
             <button @click.prevent="add">添加</button>
         </form>
-        <table class="table table-bordered text-center" >
-        <thead>
-           <td>选择</td>
-           <td>名称</td>
-           <td>价格</td>
-           <td>删除</td>
-        </thead>
-        <tbody>
-            <tr v-for="(item,index) in list" :key="index" v-bind:class="{red:item.isRed}" v-on:click="IsRed(item)">
-                <td><input type="checkbox" v-model="item.isRed"></td>
-                <td>{{ item.name }}</td>
-                <td>{{ item.price }}</td>
-                <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button></td>
-            </tr>
-            <tr>
-                <td><button type="button" class="btn btn-danger btn-xs">删除选中</button></td>
-                <td colspan="3" v-model="">总价是: 0 元</td>
-            </tr>
-        </tbody>
+        <br>
+        <table class="table table-bordered text-center">
+            <thead>
+                <td>选择</td>
+                <td>名称</td>
+                <td>价格</td>
+                <td>删除</td>
+            </thead>
+            <tbody>
+                <tr v-for="(item,index) in list" :key="index" v-bind:class="{red:item.isRed}" v-on:click="IsRed(item)">
+                    <td><input type="checkbox" v-model="item.isRed"></td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price }}</td>
+                    <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs" @click.stop="del(index)"></button></td>
+                </tr>
+                <tr>
+                    <td><button type="button" class="btn btn-danger btn-xs" v-on:click="itDelete">删除选中</button></td>
+                    <td colspan="3">总价是:{{ total }}元</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    
-    </table>
+
+
     <script src="vue.js"></script>
     <script>
         new Vue({
-            el:'#app',
-            data:{
-                list:[
+            el: '#app',
+            data: {
+                list: [
                     {
-                        name:'衣服',
-                        price:100,
-                        isRed:false
-                    },{
-                        name:'裤子',
-                        price:200,
-                        isRed:false
-                    },{
-                        name:'鞋',
-                        price:500,
-                        isRed:false
+                        name: '衣服',
+                        price: 100,
+                        isRed: false
+                    }, {
+                        name: '裤子',
+                        price: 200,
+                        isRed: false
+                    }, {
+                        name: '鞋',
+                        price: 500,
+                        isRed: false
                     }
                 ],
-                proName:'',
-                proPrice:0,
-                count:0
+                proName: '',
+                proPrice: 0,
+                showArr:[]
             },
-            methods:{
+            methods: {
                 add(){
                     return this.list.push({
-                        name:this.proName,
-                        price:this.proPrice
+                        name: this.proName,
+                        price: this.proPrice,
+                        isRed:false
                     })
                 },
-                IsRed(item){
+                IsRed(item) {
                     console.log(item)
                     item.isRed = !item.isRed
+                },
+                itDelete(){
+                    // this.list.forEach((obj,index) => {
+                    //     if(obj.isRed){
+                    //         this.list.splice(index,1);
+                    //     }
+                    // })
+                    let arr =this.list.filter((obj,index) => {
+                        return !obj.isRed;
+                    }) 
+                    this.list = arr;    
+                },
+                del(index){
+                    this.list.splice(index,1);
+                },
+
+            },
+            computed:{
+                total(){
+                    let sum=0;
+                    this.list.forEach((obj,index) => {
+                        if(obj.isRed){
+                            sum += obj.price;
+                        }
+                    })
+                    return sum;
                 }
             }
         })
-    
+
     </script>
 </body>
+
 </html>

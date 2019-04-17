@@ -123,7 +123,10 @@ input{
     bottom:0;
     left:0;
     right:0;
+    text-align:center;
+    line-height: 675px;
 }
+
 .moveToLeft{
     animation: moveToLeft 1s ease forwards;
 }
@@ -139,4 +142,15 @@ input{
     100%{
         transform: translateX(100%);
     }
+}
+/* 第二页结束 */
+
+/* 第三页开始 */
+.page-3{
+    background: #eceef4;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
 }

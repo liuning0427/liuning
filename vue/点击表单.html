@@ -8,29 +8,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
-        .color{
-            background: #d4cca1;
-        }
-        .color1{
-            background: #d4cca1;
+        .red{
+            background: #f1aa23;
         }
     </style>
 </head>
 <body>
     <div id="app">
-        <table class="table table-bordered text-center" v-bind:class="{color:isColor}" v-on:click="color" >
-        <thead >
+        <h1 class="text-center">商品</h1>
+        <form class="form-inline text-center">
+            <label for="inputName">名称</label>
+            <input type="text" v-model="proName">
+            <label for="inputPrice">价格</label>
+            <input type="number" v-model="proPrice">
+            <button @click.prevent="add">添加</button>
+        </form>
+        <table class="table table-bordered text-center" >
+        <thead>
            <td>选择</td>
            <td>名称</td>
            <td>价格</td>
            <td>删除</td>
         </thead>
-        <tbody :class="{color1:isColor1}" @click="color1">
-            <tr v-for="(item,index) in list" :key="index">
-                <td></td>
+        <tbody>
+            <tr v-for="(item,index) in list" :key="index" v-bind:class="{red:item.isRed}" v-on:click="IsRed(item)">
+                <td><input type="checkbox" v-model="item.isRed"></td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.price }}</td>
-                <td></td>
+                <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs"></button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="btn btn-danger btn-xs">删除选中</button></td>
+                <td colspan="3" v-model="">总价是: 0 元</td>
             </tr>
         </tbody>
     </div>
@@ -44,25 +53,33 @@
                 list:[
                     {
                         name:'衣服',
-                        price:100
+                        price:100,
+                        isRed:false
                     },{
                         name:'裤子',
-                        price:200
+                        price:200,
+                        isRed:false
                     },{
                         name:'鞋',
-                        price:500
+                        price:500,
+                        isRed:false
                     }
                 ],
-                isColor:false,
-                isColor1:false
+                proName:'',
+                proPrice:0,
+                count:0
             },
             methods:{
-               color(){
-                   this.isColor = !this.isColor;
-               },
-               color1(){
-                   this.isColor1 = !this.isColor1;
-               },
+                add(){
+                    return this.list.push({
+                        name:this.proName,
+                        price:this.proPrice
+                    })
+                },
+                IsRed(item){
+                    console.log(item)
+                    item.isRed = !item.isRed
+                }
             }
         })
     

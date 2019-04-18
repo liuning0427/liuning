@@ -18,9 +18,9 @@
 <body>
     <div id="app">
         <h1 class="text-center">商品</h1>
-        <form action="" class="text-center" v-on:click="showArr">
-            <input type="text">
-            <button>搜索</button>
+        <form action="" class="text-center">
+            <input type="text" v-model="seachName">
+            <button @click.prevent="filterPro">搜索</button>
         </form>
         <br>
         <form class="form-inline text-center">
@@ -39,14 +39,14 @@
                 <td>删除</td>
             </thead>
             <tbody>
-                <tr v-for="(item,index) in list" :key="index" v-bind:class="{red:item.isRed}" v-on:click="IsRed(item)">
+                <tr v-for="(item,index) in showList" :key="item.id" v-bind:class="{red:item.isRed}" v-on:click.stop="IsRed(item.id)">
                     <td><input type="checkbox" v-model="item.isRed"></td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.price }}</td>
-                    <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs" @click.stop="del(index)"></button></td>
+                    <td><button type="button" class="btn btn-warning glyphicon glyphicon-remove btn-xs" @click.stop="del(item.id)"></button></td>
                 </tr>
                 <tr>
-                    <td><button type="button" class="btn btn-danger btn-xs" v-on:click="itDelete">删除选中</button></td>
+                    <td><button type="button" class="btn btn-danger btn-xs" v-on:click="itDelete()">删除选中</button></td>
                     <td colspan="3">总价是:{{ total }}元</td>
                 </tr>
             </tbody>
@@ -63,32 +63,63 @@
                     {
                         name: '衣服',
                         price: 100,
-                        isRed: false
+                        isRed: false,
+                        id:1
                     }, {
                         name: '裤子',
                         price: 200,
-                        isRed: false
+                        isRed: false,
+                        id:2
                     }, {
                         name: '鞋',
                         price: 500,
-                        isRed: false
+                        isRed: false,
+                        id:3
+                    }
+                ],
+                showList: [
+                    {
+                        name: '衣服',
+                        price: 100,
+                        isRed: false,
+                        id:1
+                    }, {
+                        name: '裤子',
+                        price: 200,
+                        isRed: false,
+                        id:2
+                    }, {
+                        name: '鞋',
+                        price: 500,
+                        isRed: false,
+                        id:3
                     }
                 ],
                 proName: '',
                 proPrice: 0,
-                showArr:[]
+                seachName:''
             },
             methods: {
                 add(){
                     return this.list.push({
                         name: this.proName,
-                        price: this.proPrice,
-                        isRed:false
-                    })
+                        price: parseInt(this.proPrice) ,
+                        isRed:false,
+                        id:Symbol()
+                    }),
+                    this.showList = [...this.list];
                 },
-                IsRed(item) {
-                    console.log(item)
-                    item.isRed = !item.isRed
+                IsRed(id) {
+                    // console.log(item)
+                    // item.isRed = !item.isRed
+                    let changeList = this.list.map((obj,index) => {
+                        if(obj.id == id){
+                            obj.isRed = !obj.isRed;
+                        }
+                        return obj;
+                    })
+                    this.list = [...changeList];
+                    this.showList = [...changeList]
                 },
                 itDelete(){
                     // this.list.forEach((obj,index) => {
@@ -99,11 +130,23 @@
                     let arr =this.list.filter((obj,index) => {
                         return !obj.isRed;
                     }) 
-                    this.list = arr;    
+                    this.list = [...arr];    
+                    this.showList = [...arr]
                 },
-                del(index){
-                    this.list.splice(index,1);
+                del(id){
+                    let delList = this.list.filter((obj,index) => {
+                        return obj.id != id;
+                    })
+                    this.list =[...delList];
+                    this.showList = [...delList];
                 },
+                filterPro(){
+                    let seachList= this.list.filter((obj,index) => {
+                        return obj.name.includes (this.seachName);
+                    })
+                    this.showList = [...seachList];
+                    this.seachName = "";
+                }
 
             },
             computed:{

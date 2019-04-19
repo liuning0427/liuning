@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="table-responsive text-center"> 
+            <h1>商品列表</h1>
+            <table class="table table-striped table-bodered text-center">
+                <thead>
+                    <td>选择</td>
+                    <td>商品名称</td>
+                    <td>商品价格</td>
+                    <td>删除</td>
+                </thead>
+                <tbody v-for="(item,index) in list">
+                    <td></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.price}}</td>
+                    <td></td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let arr = new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {
+                        name:"衣服",
+                        price:100
+                    },{
+                        name:"衣服",
+                        price:100
+                    },{
+                        name:"衣服",
+                        price:100
+                    },{
+                        name:"衣服",
+                        price:100
+                    }
+                ]
+            },
+            methods:{
+
+            },
+            computed:{
+
+            }
+        })
+    
+    </script>
+</body>
+</html>

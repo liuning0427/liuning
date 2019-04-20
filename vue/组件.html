@@ -8,11 +8,16 @@
 </head>
 <body>
     <div id="app">
-        <demo name="haha"></demo>
+        <demo name="haha">
+            <h2>hahaha</h2>
+        </demo>
         <demo age="10"></demo>
     </div>
     <template id="body">
-        <h1>{{name}} --- {{age}}</h1>
+        <div>
+            <h1>{{name}} --- {{age}}</h1>
+            <slot></slot>
+        </div>
         <!-- <p>{{age}}</p> -->
     </template>
     <script src="vue.js"></script>

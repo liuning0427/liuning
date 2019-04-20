@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .dialog{
+            width: 300px;
+            height: 200px;
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <one-dialog title="登录页">
+            <h1>xx</h1>
+        </one-dialog>
+        <one-dialog title="注册页">
+            <div>
+                姓名:<input type="text" />
+                <br>
+                密码:<input type="password" />
+            </div>
+        </one-dialog>
+    </div>
+    <template id="dia">
+        <div class="dialog">
+            <p>{{title}}</p>
+            <slot></slot>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+                "one-dialog":{
+                    template:"#dia",
+                    props:["title"]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -47,6 +47,15 @@ module.exports = {
                     }
                 }],
                 exclude:/node_modules/
+            },{
+                test:/\.scss$/,
+                use:['style-loader','css-loader','sass-loader']
+            },{
+                test:/\.scss$/,
+                use:ExtractTextPlugin.extract({
+                    use:["css-loader","sass-loader"],
+                    fallback:"style-loader"
+                })
             }
         ]
     },

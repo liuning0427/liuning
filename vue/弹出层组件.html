@@ -15,10 +15,10 @@
 </head>
 <body>
     <div id="app">
-        <one-dialog title="登录页">
+        <one-dialog title="登录页" @click="fn">
             <h1>xx</h1>
         </one-dialog>
-        <one-dialog title="注册页">
+        <one-dialog title="注册页" @click="fn">
             <div>
                 姓名:<input type="text" />
                 <br>
@@ -28,7 +28,8 @@
     </div>
     <template id="dia">
         <div class="dialog">
-            <p>{{title}}</p>
+            <span>{{title}}</span>
+            <span @click="$emit('click','fn')">[x]</span>
             <slot></slot>
         </div>
     </template>
@@ -38,6 +39,11 @@
             el:"#app",
             data:{
 
+            },
+            methods:{
+                fn(){
+                    console.log('gaga');
+                }
             },
             components:{
                 "one-dialog":{

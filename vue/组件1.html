@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app{
+            width:500px;
+            height:400px;
+            background:#faac21;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <demo name="登录页">
+            <h3>请登录</h3>
+        </demo>
+    </div>
+    <template id="div">
+        <div class="dem">
+            <span>{{ name }}</span>
+            <span v-on:click="$emit('click','fn')">[x]</span>
+            <slot></slot>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                fn(){
+                    console.log(Math.random());
+                }
+            },
+            components:{
+                "demo":{
+                    template:"#div",
+                    props:["name"]
+                }
+            }
+        })
+    </script>
+</body>
+</html>

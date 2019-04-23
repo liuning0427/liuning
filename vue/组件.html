@@ -8,37 +8,28 @@
 </head>
 <body>
     <div id="app">
-        <demo name="haha">
-            <h2>hahaha</h2>
+        <demo name="嘻嘻">
+            <div>哈哈</div>
         </demo>
-        <demo age="10"></demo>
     </div>
-    <template id="body">
-        <div>
-            <h1>{{name}} --- {{age}}</h1>
+    <template id="dia">
+        <span class="diaa">
+            <h1>{{name}}</h1>
             <slot></slot>
-        </div>
-        <!-- <p>{{age}}</p> -->
+        </span>
+        
     </template>
     <script src="vue.js"></script>
     <script>
-       
-           Vue.component("temp",{
-            template:"<h1>haha</h1>"
-           })
-           let vm = new Vue({
-                el:"#app",
-                components:{
-                    "demo":{
-                        template:"#body",
-                        props:["name","age"]
-                    }
+        let vm = new Vue({
+            el:"#app",
+            components:{
+                "demo":{
+                    template:"#dia",
+                    props:["name"]
                 }
-           })
-        //    let vm1 = new Vue({
-        //        el:"#app1"
-        //    })
-
+            }
+        })
 
     </script>
 </body>

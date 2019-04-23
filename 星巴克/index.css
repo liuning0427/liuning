@@ -94,4 +94,11 @@ body{
     .right{
         display:none;
     }
+    .body{
+        margin:-70px auto;
+    }
+    .body p,.vip{
+        display:none;
+    }
+    
 }

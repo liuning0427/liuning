@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <!-- 调用组件 -->
+    <div id="app">
+        <demo title="哈哈" name="题目"></demo>
+        <h3>hahahhahahahahahahha</h3>
+        <p>gagagaggagggagaga</p>
+        <div>hsuqjhsuwhdqwudweuygwe</div>
+    </div>
+    <!-- 定义组件 -->
+    <template id="dev">
+        <div>
+            <h1>{{ title }} -- {{ name }}</h1>
+            <slot></slot>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el:"#app",
+            components:{
+                "demo":{
+                    template:"#dev",
+                    props:['title','name']
+                }
+            }
+        })
+    </script>
+</body>
+</html>

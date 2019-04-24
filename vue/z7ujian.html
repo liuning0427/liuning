@@ -9,16 +9,30 @@
 <body>
    <!-- 调用组件 -->
     <div id="app">
-        <demo title="哈哈" name="题目"></demo>
-        <h3>hahahhahahahahahahha</h3>
-        <p>gagagaggagggagaga</p>
-        <div>hsuqjhsuwhdqwudweuygwe</div>
+        <demo title="哈哈" name="题目">
+            <div slot="a">
+                <h3>hahahhahahahahahahha</h3>
+                <p>gagagaggagggagaga</p>
+            </div>
+            <div slot="b">
+                <p>hsuqjhsuwhdqwudweuygwe</p>
+                <input type="text">
+            </div>
+            
+        </demo>
+           
+            
     </div>
     <!-- 定义组件 -->
     <template id="dev">
         <div>
             <h1>{{ title }} -- {{ name }}</h1>
-            <slot></slot>
+            <div>
+                <slot name="a"></slot>
+            </div>
+            <div>
+                <slot name="b"></slot>
+            </div>
         </div>
     </template>
     <script src="vue.js"></script>

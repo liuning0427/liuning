@@ -1,16 +1,16 @@
 <template>
     <div class="header">
-        <div>
+        <div :style="{background:seachList.bg}">
             <span class="header-left">首页</span>
-            <span class="header-title">电影</span>
+            <span class="header-title">{{ seachList.name }}</span>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props:["seachList"]
+    }
 </script>
 
 <style scoped>
@@ -31,6 +31,6 @@ export default {
         left:50%;
         top:50%;
         transform: translate(-50%,-50%);
-        font-size:0.4rem;
+        font-size:0.3rem;
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        电影
+        <h1>movie</h1>
     </div>
 </template>
 

@@ -1,26 +1,17 @@
 <template>
     <div class="footer">
-        <ul>
-            <li>
-                <router-link to="/movie">电影</router-link>
-            </li>
-            <li>
-                <router-link to="/music">音乐</router-link>
-            </li>
-            <li>
-                <router-link to="/book">书籍</router-link>
-            </li>
-            <li>
-                <router-link to="/pic">图片</router-link>
+        <ul :style="{background:seachList.bg}" class="footer-ul">
+            <li v-for="(obj,index) in list" :key="index" class="footer-li" @click="$emit('click',index)">
+                <router-link :to="obj.path">{{ obj.name }}</router-link>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props:["list","seachList"]
+    }
 </script>
 
 <style scoped>
@@ -32,12 +23,18 @@ export default {
         bottom:0;
         width:100%;
     }
-    ul{
+    .footer-ul{
         display:flex;
     }
-    li{
+    .footer-li{
         flex:1;
         text-align: center;
-        line-height: 1rem;
+        line-height: 1rem;  
+        border:1px solid;
+        border-color:transparent #ccc transparent transparent; 
+    }
+    .footer-li a.router-link-active{
+        color:#fff;
+        outline:none;
     }
 </style>

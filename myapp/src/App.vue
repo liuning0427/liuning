@@ -1,15 +1,21 @@
 <template>
   <div id="app">
-    <common></common>
+    <common-header></common-header>
+    <div id="content">
+      <router-view />
+    </div>
+    <common-footer></common-footer>
     <router-view/>
   </div>
 </template>
 
 <script>
-    import Common from '@/components/Common.vue';
+    import CommonHeader from '@/components/CommonHeader.vue'
+    import CommonFooter from '@/components/CommonFooter.vue'
     export default {
         components:{
-            Common
+            CommonHeader,
+            CommonFooter
         }
     }
 </script>

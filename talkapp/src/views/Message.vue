@@ -1,5 +1,5 @@
 <template>
     <div>
-        <input type="image" src="" alt="">
+        <p>haha</p>
     </div>
 </template>

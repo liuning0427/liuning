@@ -27,15 +27,15 @@
               },{
                 name:'音乐',
                 path:'/music',
-                bg:'#ff12aa'
+                bg:'#0012aa'
               },{
                 name:'书籍',
                 path:'/book',
-                bg:'#f10032'
+                bg:'#dd14cc'
               },{
                 name:'图片',
                 path:'/pic',
-                bg:'#ffd1a0'
+                bg:'#aacc31'
               }
             ],
             seachList:{

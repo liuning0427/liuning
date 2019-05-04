@@ -18,7 +18,7 @@
     .footer{
         height: 1rem;
         background: #00a861;
-        color:#fff;
+        color:#fff0ff;
         position: fixed;
         bottom:0;
         width:100%;

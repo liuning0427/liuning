@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			
+			.btn1 {
+				position: relative;
+				left: 115px;
+			}
+			
+			.inputStyle {
+				list-style: none;
+			}
+			
+			.li2 {
+				position: relative;
+				left: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table>
+			<tr>
+				<td>标题 :</td>
+				<td> <input type="text" id="title" /> </td>
+			</tr>
+			<tr>
+				<td>内容 :</td>
+				<td><input type="text" id="conter" /> </td>
+
+			</tr>
+
+			<tr>
+				<td colspan="2"> <button type="button" class="btn1" id="btn">提交按钮 </button> </td>
+			</tr>
+
+		</table>
+		<hr />
+
+		<ul id="inputText" class="inputStyle"></ul>
+		<script type="text/javascript">
+			var inputBtn = document.getElementById("btn");
+			var title = document.getElementById("title");
+			var conter = document.getElementById("conter");
+			var inputText = document.getElementById("inputText");
+			var newDate = document.getElementById("date");
+
+			//定义一个数组 用来存储数据
+			var noteList = [{
+				title: "你就是狗子",
+				conter: "你真的就是狗子",
+				date: 2018
+			}, {
+				title: "你也是一个狗子",
+				conter: "你必须是一个狗子",
+				date: 2019
+			}];
+
+			//用来实现替换 
+			var tpl = '<ul id="inputText" class="inputStyle">' +
+
+				'<li>' + '标题' + '</li>' +
+				'<li class="li2">' + '日期' + '</li>' +
+				'<li>' + '内容' + '</li>' +
+				'</ul>' + '<br/>'
+
+			var render = function() {
+				var html = "";
+				for (var i = 0; i < noteList.length; i++) {
+					var newDate = noteList[i].date;
+					var newD = new Date(newDate);
+					 var year = newD.getFullYear();
+					var month = newD.getMonth()+1;
+					var day = newD.getDay();
+					var date = newD.getDate();
+					var hour = newD.getHours();
+					hour= hour?"0"+hour:hour;
+					var minute = newD.getMinutes();
+					minute=minute?"0"+minute:minute;
+					var seconds = newD.getSeconds();
+					seconds = seconds?"0"+seconds :seconds;
+					var data = year +"年" + month +"月" + date + "日" +hour +":" +minute+":"+seconds
+					
+					html += tpl.replace("标题", noteList[i].title)
+						.replace("日期", data)
+						.replace("内容", noteList[i].conter)
+				}
+				inputText.innerHTML = html;
+			}
+
+			//给按钮添加监听器
+			inputBtn.addEventListener("click", function() {
+
+				if(title.value == "" || conter.value == "") {
+					alert("你写的有毛病");
+					return;
+				}
+                   d= new Date();
+				var note = {
+					title: title.value,
+					conter: conter.value,
+					date: d.getTime()
+				}
+
+				noteList.push(note);
+				//保存数据到本地；
+				localStorage.setItem('noteList',JSON.stringify(noteList));
+				//var str = JSON.stringify("noteList");
+				//console.log(str);
+				//从本地存储获取数据
+				//noteList = JSON.parse(localStorage.getItem(noteList));
+				render();
+				title.value = "";
+				conter.value = "";
+				//date: new Date().getTime();
+
+			});
+			
+			 noteList  = JSON.parse(localStorage.getItem("noteList"));
+			  render();
+			  
+			 
+		</script>
+	</body>
+
+</html>

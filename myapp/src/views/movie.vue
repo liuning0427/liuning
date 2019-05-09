@@ -11,6 +11,9 @@
                 </div>
             </li>
         </ul>
+        <!-- <div class="loading" v-show="isShow">
+            <img src="@/assets/img/loading.gif" /> 
+        </div> -->
     </div>
 </template>
 
@@ -19,15 +22,31 @@ import axios from 'axios'
 export default {
     data() {
         return {
-            List:[]
+            List:[],
+            // isShow:ture
         }
     },
     created() {
-        axios.get('/data/movie0.json')
-        .then((result)=>{
+       this.getMovie();
+       window.onscroll = () =>{
+           let scrollTop = document.documentElement.scrollTop;
+           let clinetHeight = document.documentElement.clientHeight;
+           let height = document.documentElement.scrollHeight;
+           console.log(scrollTop,clinetHeight,height);
+           if(scrollTop + clinetHeight == height){
+               this.getMovie();
+           }
+       }
+    },
+    methods: {
+        getMovie(){
+            axios.get('/data/movie0.json')
+            .then((result)=>{
             this.List = result.data.subjects;
-            console.log(this.List);
+            // console.log(this.List);
+            // isShow:false;
         })
+        }
     },
 }
 </script>
@@ -48,5 +67,8 @@ export default {
     .movie-txt{
         flex:3;
         margin-left:0.2rem;
+    }
+    .loding{
+        margin:50% 50%;
     }
 </style>

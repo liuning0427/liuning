@@ -4,6 +4,7 @@ import Movie from '@/views/movie.vue'
 import Music from '@/views/music.vue'
 import Book from '@/views/book.vue'
 import Pic from '@/views/pic.vue'
+import MusicList from '@/views/MusicList.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +23,9 @@ export default new Router({
     },{
       path:"/pic",
       component:Pic
+    },{
+      path:"/musiclist",
+      component:MusicList
     }
   ]
 })

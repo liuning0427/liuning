@@ -11,9 +11,9 @@
                 </div>
             </li>
         </ul>
-        <!-- <div class="loading" v-show="isShow">
-            <img src="@/assets/img/loading.gif" /> 
-        </div> -->
+        <div class="loading" v-show="isShow">
+            <img src="@/assets/imgs/loading.gif" /> 
+        </div>
     </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     data() {
         return {
             List:[],
-            // isShow:ture
+            isShow:true
         }
     },
     created() {
@@ -44,7 +44,7 @@ export default {
             .then((result)=>{
             this.List = result.data.subjects;
             // console.log(this.List);
-            // isShow:false;
+            isShow:false;
         })
         }
     },

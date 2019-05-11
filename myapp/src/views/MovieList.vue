@@ -2,7 +2,7 @@
     <div>
         {{$route.params.id}}
         {{list.title}}
-        <img :src="list.images.medium" />
+        <img :src="list.images.medium" v-if="isShow"/>
         
     </div>
 </template>
@@ -13,12 +13,14 @@
         created() {
             axios.get('/data/moviedetail.json')
             .then((result)=>{
-                this.list = result.data
+                this.list = result.data;
+                this.isShow=true;
             })
         },
         data() {
             return {
-                list:{}
+                list:{},
+                isShow:false
             }
         },
     }

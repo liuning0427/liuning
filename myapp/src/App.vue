@@ -5,7 +5,6 @@
       <router-view />
     </div>
     <common-footer :list="list" :seachList="seachList" @click="fn"></common-footer>
-    <router-view/>
   </div>
 </template>
 

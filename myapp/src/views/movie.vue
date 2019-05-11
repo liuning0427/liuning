@@ -32,7 +32,7 @@ export default {
            let scrollTop = document.documentElement.scrollTop;
            let clinetHeight = document.documentElement.clientHeight;
            let height = document.documentElement.scrollHeight;
-           console.log(scrollTop,clinetHeight,height);
+        //    console.log(scrollTop,clinetHeight,height);
            if(scrollTop + clinetHeight == height){
                this.getMovie();
            }
@@ -42,10 +42,10 @@ export default {
         getMovie(){
             axios.get('/data/movie0.json')
             .then((result)=>{
-            this.List = result.data.subjects;
-            // console.log(this.List);
-            isShow:false;
-        })
+                this.List = result.data.subjects;
+                // console.log(this.List);
+                this.isShow=false;
+            })
         },
         getin(id){
             this.$router.push('/movielist/'+id);

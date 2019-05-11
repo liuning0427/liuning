@@ -1,7 +1,7 @@
 <template>
     <div class="movie-contanie">
         <ul>
-            <li class="movie-content" v-for="(obj,index) in List" :key="index">
+            <li class="movie-content" v-for="(obj,index) in List" :key="index" @click="getin(obj.id)">
                 <img :src="obj.images.medium" class="movie-img">
                 <div class="movie-txt">
                     <h4>{{obj.title}}</h4>
@@ -46,6 +46,10 @@ export default {
             // console.log(this.List);
             isShow:false;
         })
+        },
+        getin(id){
+            this.$router.push('/movielist/'+id);
+            console.log(id);
         }
     },
 }

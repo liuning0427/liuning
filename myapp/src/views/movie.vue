@@ -32,7 +32,7 @@ export default {
            let scrollTop = document.documentElement.scrollTop;
            let clinetHeight = document.documentElement.clientHeight;
            let height = document.documentElement.scrollHeight;
-        console.log(scrollTop,clinetHeight,height);
+        // console.log(scrollTop,clinetHeight,height);
            if(scrollTop + clinetHeight == height){
                this.getMovie();
            }

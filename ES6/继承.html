@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name = name,
+            this.age = age
+        }   
+        Person.prototype.smile = function(){
+            console.log(this.name + this.age + "haha")
+        }
+        let p1 = new Person('ln',20);
+        p1.smile();
+
+        function Xzgg(name,age){
+            Person.call(this,name,age);
+        }
+        Xzgg.prototype = new Person; //继承原型
+        Xzgg.prototype.constructor = Xzgg; //原本子类的原型下的constructor指向构造函数 需要指回来
+        let p2 = new Xzgg('xz',27);
+        p2.smile();
+    </script>
+</body>
+</html>

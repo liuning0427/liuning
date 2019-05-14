@@ -42,7 +42,7 @@ export default {
         getMovie(){
             axios.get('/data/movie0.json')
             .then((result)=>{
-                this.List = result.data.subjects;
+                this.List = [...result.data.subjects];
                 // console.log(this.List);
                 this.isShow=false;
             })

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Box extends React.Component{
+            constructor(params){
+                super(params);
+                this.state={
+                    arr:['eat','sleep','coding']
+                }
+                this.click = this.click.bind(this);
+            }
+            click(val){
+                // console.log(this.event.value);
+                let list = [...this.state.arr];
+                list.push(val);
+                this.setState({
+                    arr:list
+                })
+            }
+            render(){
+                return (
+                    <div>
+                        <h1>TODO LIST</h1>
+                        <A click={this.click}></A>
+                        <B arr={this.state.arr}></B>
+                    </div>
+                )
+            }
+        }
+        class A extends React.Component{
+            render(){
+                return (
+                    <div>
+                        <input type="text" ref={input => this.event = input}/>
+                        <button onClick={()=>{
+                            this.props.click(this.event.value);
+                            this.event.value="";
+                        }}>添加</button>
+                    </div>
+                )
+            }
+        }
+        class B extends React.Component{  
+            render(){
+                return(
+                    <ul>
+                        {this.props.arr.map((val,key)=>{
+                            return(<li key={key}>{val}</li>)
+                        })}
+                    </ul>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Box></Box>,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>

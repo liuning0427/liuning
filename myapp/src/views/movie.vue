@@ -41,7 +41,7 @@ export default {
     methods: {
         getMovie(){
             axios.get('/data/movie0.json')
-            .then((result)=>{
+            .then((result)=>{  //result是请求回来接受到的数据
                 this.List = [...result.data.subjects];
                 // console.log(this.List);
                 this.isShow=false;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Text extends React.Component{
+            constructor(params){
+                super(params);
+                this.click = this.click.bind(this);
+            }
+            click(event){
+                console.log(this.event1.value);
+                console.log(this.event2.value);
+            }
+            render(){
+                return (
+                    <div>
+                        用户名:<input type="text" ref={input => this.event1 = input}/>
+                        密码:<input type="password" ref={input => this.event2 = input}/>
+                        <button onClick={this.click}>确认</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Text></Text>,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class All extends React.Component{
+            constructor(params){
+                super(params);
+                this.click = this.click.bind(this);
+                this.state={
+                    arr:[
+                        {
+                            name:'eating',
+                            isActive:false,
+                            id:1
+                        },{
+                            name:'sleeping',
+                            isActive:false,
+                            id:2
+                        },{
+                            name:'watching',
+                            isActive:false,
+                            id:3
+                        }
+                    ]
+                }
+            }
+            click(val){
+                let list = [...this.state.arr];
+                list.push({
+                    name:val,
+                    isActive:false,
+                    id:(new Date()).getTime()
+                });
+                this.setState({
+                    arr:list
+                })
+            }
+            render(){
+                return(
+                    <div>
+                        <h1>todolist</h1>
+                        <C></C>
+                        <A click={this.click}></A>
+                        <B arr={this.state.arr}></B>
+                    </div>
+                )
+            }
+        }
+        class A extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <input type="text" ref={input => this.event = input}/>
+                        <button onClick={()=>{
+                            this.props.click(this.event.value);
+                            this.event.value="";
+                        }}>添加</button>
+                    </div>
+                )
+            }
+        }
+        class B extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <ul>
+                            {this.props.arr.map((obj,index)=>{
+                                return(<li key={obj.id}>{obj.name}
+                                    <button>删除</button>
+                                </li>)
+                            })}
+                        </ul>
+                    </div>
+                )
+            }
+        }
+        class C extends React.Component{
+            render(){
+                return(
+                    <div>
+                        <input type="text"/>
+                        <button>搜索</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <All></All>,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>

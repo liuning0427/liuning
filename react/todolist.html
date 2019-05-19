@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .color{
+            background: #c12233;
+        }
+        .show{
+            display:none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -18,20 +26,26 @@
             constructor(params){
                 super(params);
                 this.click = this.click.bind(this);
+                this.change = this.change.bind(this);
+                this.del = this.del.bind(this);
+                this.seach = this.seach.bind(this);
                 this.state={
                     arr:[
                         {
                             name:'eating',
                             isActive:false,
-                            id:1
+                            id:1,
+                            isShow:true
                         },{
                             name:'sleeping',
                             isActive:false,
-                            id:2
+                            id:2,
+                            isShow:true
                         },{
                             name:'watching',
                             isActive:false,
-                            id:3
+                            id:3,
+                            isShow:true
                         }
                     ]
                 }
@@ -41,7 +55,35 @@
                 list.push({
                     name:val,
                     isActive:false,
-                    id:(new Date()).getTime()
+                    id:(new Date()).getTime(),
+                    isShow:true
+                });
+                this.setState({
+                    arr:list
+                })
+            }
+            change(index){
+                let list = [...this.state.arr];
+                list[index].isActive =  !list[index].isActive;
+                this.setState({
+                    arr:list
+                })
+            }
+            del(index){
+                let list = [...this.state.arr];
+                list.splice(index,1);
+                this.setState({
+                    arr:list
+                })
+            }
+            seach(value){
+                let list = [...this.state.arr]; 
+                list.forEach((obj,index) => {
+                    if(obj.name.includes(value)){
+                        obj.isShow = true;
+                    }else{
+                        obj.isShow = false;
+                    }
                 });
                 this.setState({
                     arr:list
@@ -51,9 +93,9 @@
                 return(
                     <div>
                         <h1>todolist</h1>
-                        <C></C>
+                        <C seach={this.seach}></C>
                         <A click={this.click}></A>
-                        <B arr={this.state.arr}></B>
+                        <B arr={this.state.arr} change={this.change} del={this.del}></B>
                     </div>
                 )
             }
@@ -77,8 +119,16 @@
                     <div>
                         <ul>
                             {this.props.arr.map((obj,index)=>{
-                                return(<li key={obj.id}>{obj.name}
-                                    <button>删除</button>
+                                let class1 = obj.isActive?'color':'';
+                                let class2 = obj.isShow?'':'show'
+                                return(<li className={class1+" "+class2} key={obj.id} onClick={()=>{
+                                    this.props.change(index);
+                                }}>
+                                    {obj.name}
+                                    <button onClick={(event)=>{
+                                        this.props.del(index);
+                                        event.stopPropagation();
+                                        }}>删除</button>
                                 </li>)
                             })}
                         </ul>
@@ -90,8 +140,10 @@
             render(){
                 return(
                     <div>
-                        <input type="text"/>
-                        <button>搜索</button>
+                        <input type="text" ref={input => this.event = input}/>
+                        <button onClick={(event)=>{
+                            this.props.seach(this.event.value);
+                        }}>搜索</button>
                     </div>
                 )
             }

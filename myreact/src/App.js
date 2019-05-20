@@ -13,7 +13,7 @@ function App() {
         -
         <Link to="/mine">我的</Link>
         -
-        <Link to="/children">孩子</Link>
+        <Link to="/children"></Link>
         <Route exact path="/" component={shouye}></Route>
         <Route exact path="/mine" component={mine}></Route> 
         <Route path="/children" children={(props)=>{

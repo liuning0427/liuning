@@ -4,10 +4,17 @@ import {BrowserRouter as Router,Link,Route} from 'react-router-dom'
 import mine from './components/mine'
 import shouye from './components/shouye'
 import Children from './components/Children'
+import store from './store';
+import add from './action';
 
 function App() {
   return (
     <div className="App">
+      <button onClick={()=>{
+        console.log("呵呵");
+        store.dispatch(add());
+      }}>add</button>
+
       <Router>
         <Link to="/">首页</Link>
         -

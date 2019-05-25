@@ -1,0 +1,11 @@
+.top{
+    border-bottom:1px solid #ccc;
+}
+.top span,a{
+    padding:10px 10px;
+    float: right;
+}
+.bottom{
+    float: right;
+    margin:5px 20px;
+}

@@ -1,11 +1,15 @@
 .top{
+    height:7vh;
+    line-height:7vh;
     border-bottom:1px solid #ccc;
 }
 .top span,a{
-    padding:10px 10px;
-    float: right;
+    padding:0 5px;
 }
-.bottom{
-    float: right;
-    margin:5px 20px;
+.bottom p{
+    margin-right: 15px;
+    margin-bottom:0;
+}
+.header{
+    text-align:right;
 }

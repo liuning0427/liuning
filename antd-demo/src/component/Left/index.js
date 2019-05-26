@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import { Menu,Icon } from 'antd';
 import './index.css'
 import menuList from './../../config/menuconfig'
+import {Link} from 'react-router-dom'
+
 const {SubMenu} = Menu;
 
 export default class index extends Component {
@@ -16,6 +18,7 @@ export default class index extends Component {
             }
             return (
                 <Menu.Item key={elem.path}>
+                    <Link to={elem.path}></Link>
                     <Icon type={elem.icon}></Icon>
                     {elem.title}
                 </Menu.Item>

@@ -6,24 +6,26 @@ import {
 import './App.css';
 import Left from './component/Left';
 import CommonHeader from './component/commonHeader'
-import HOME from './page/HOME'
+import CommonFooter from './component/commonFooter'
+import {Link} from 'react-router-dom'
 
-  class App extends Component {
-    render() {
+  function App(props){
       return (
-        <div className="App">
+        <div className="App">  
           <Row>
             <Col span={5}>
-              <Left></Left>
+              <Left>
+                <Link to="/home">首页</Link> 
+              </Left>
             </Col>
             <Col span={19}>
               <CommonHeader></CommonHeader>
-              <HOME></HOME>
+              {props.children} 
+              <CommonFooter></CommonFooter>
             </Col>
             </Row>
         </div>
       );
-    }
   }
 
   export default App;

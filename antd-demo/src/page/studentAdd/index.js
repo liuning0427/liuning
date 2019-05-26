@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import './index.css'
 
-export default class index extends Component {
+export default class studentAdd extends Component {
     render() {
         return (
-            <div className="footer">
-                <span>底</span>
+            <div className="add">
+                
             </div>
         )
     }

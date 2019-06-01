@@ -34,6 +34,7 @@ export default class index extends Component {
     render() {
         return (
             <div className="navleft">
+                <h1>信管16-1班</h1>
                 <Menu mode="inline" theme="dark">
                     {this.state.list}
                 </Menu>

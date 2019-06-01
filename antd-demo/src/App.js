@@ -26,6 +26,7 @@ import {Link} from 'react-router-dom'
             </Row>
         </div>
       );
+      
   }
 
   export default App;

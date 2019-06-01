@@ -1,11 +1,12 @@
 // console.log("hello world");
-console.log("start");
-for(var i=0;i<5;i++){
-    setTimeout(function(){
-        console.log(i);
-    },0);
-}
-console.log("end");
+// console.log("start");
+// for(var i=0;i<5;i++){
+//     setTimeout(function(){
+//         console.log(i);
+//     },0);
+// }
+// console.log("end");
+console.log(__dirname);
 
 // 输出顺序：start end 5 5 5 5 5
 //  对于解释器来说，先执行同步代码，再执行异步代码

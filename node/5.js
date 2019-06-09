@@ -9,7 +9,7 @@ http.createServer(function(req,res){
     }else if(urlstr === 'img'){
         parserImg();
     }else{
-        res.writeHead(404,{"Content-type":"text/html"});
+        res.writeHead(404,{"Content-type":"text/plain"});
         res.end("404");
     }
     

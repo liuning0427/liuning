@@ -26,6 +26,6 @@ function paserIndex(res){
 function parserImg(res){
     var readPath=__dirname+"/static/"+url.parse("6.jpg").pathname;
     var indexImg=fs.readFileSync(readPath,"utf-8");
-    res.writeHead(200,{"Content-type":"text/html"});
+    res.writeHead(200,{"Content-type":"img/jpeg"});
     res.end(indexImg);
 }

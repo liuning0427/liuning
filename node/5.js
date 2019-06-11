@@ -6,7 +6,7 @@ http.createServer(function(req,res){
     var urlstr=url.parse(req.url).pathname;
     if(urlstr === '/'){
         paserIndex();
-    }else if(urlstr === 'img'){
+    }else if(urlstr === '/img'){
         parserImg();
     }else{
         res.writeHead(404,{"Content-type":"text/plain"});
@@ -25,7 +25,7 @@ function paserIndex(res){
 
 function parserImg(res){
     var readPath=__dirname+"/static/"+url.parse("6.jpg").pathname;
-    var indexImg=fs.readFileSync(readPath,"utf-8");
+    var indexImg=fs.readFileSync(readPath);
     res.writeHead(200,{"Content-type":"img/jpeg"});
     res.end(indexImg);
 }

@@ -1,5 +1,8 @@
 exports.reg=function(req,res,next){
     res.render("reg.ejs");
+} 
+exports.index=function(req,res,next){
+    res.render("index.ejs",{title:"liuning"})
 }
 exports.do_reg=function(req,res,next){
     var name=req.body.uname;

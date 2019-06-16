@@ -42,7 +42,7 @@ exports.do_login=function(req,res,next){
 
     // console.log(email,pass);
     User_model.sel_data(email,pass,function(err,data){
-        // console.log(data);
         
+
     })
 }

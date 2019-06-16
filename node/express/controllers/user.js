@@ -19,7 +19,8 @@ exports.do_reg=function(req,res,next){
     User_model.checkName(name,function(err,data){
         // console.log(data);
         if(data.length>0){
-            res.send("用户名已存在")
+            // res.send("用户名已存在")
+            res.redirect("/reg");
         }else{
             User_model.insert_data(name,pass,function(err,data){
                 // console.log(data);

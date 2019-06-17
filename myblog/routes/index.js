@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../contorllors/user.js')
+var User = require('../contorllers/user.js');
+var Blog=require("../contorllers/blog.js")
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,7 +14,7 @@ router.post('/reg',User.do_reg);
 router.get('/login',User.login);
 router.post('/login',User.do_login);
 
-router.get('/index',User.index);
+router.get('/index',Blog.index);
 
 router.post('/checkname',User.checkname);
 

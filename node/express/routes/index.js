@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var User = require("../controllers/user.js")
+var User = require("../controllers/user.js");
+var Blog=require("../controllers/blog.js")
 
 /* GET home page. */
 router.get('/', User.index);

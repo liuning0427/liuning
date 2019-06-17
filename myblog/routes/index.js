@@ -13,6 +13,8 @@ router.post('/reg',User.do_reg);
 router.get('/login',User.login);
 router.post('/login',User.do_login);
 
+router.get('/index',User.index);
+
 router.post('/checkname',User.checkname);
 
 module.exports = router;

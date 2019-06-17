@@ -6,7 +6,7 @@ exports.insert_data=function(email,pass,callback){
 }
 
 exports.sel_data=function(email,pass,callback){
-    var sql="select * from t_users where (ACCOUNT,PASSWORD) values(?,?)";
+    var sql="select * from t_users where ACCOUNT=? and PASSWORD=?";
     db.query(sql,[email,pass],callback);
 }
 

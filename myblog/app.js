@@ -21,6 +21,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(cookieSession({
+  name: 'session',
+  keys: ['0123456789'],
+  maxAge:24 * 60 * 60 * 1000 //24 hours有效
+}))
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

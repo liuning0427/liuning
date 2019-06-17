@@ -29,10 +29,6 @@ exports.checkname=function(req,res,next){
     })
 }
 
-// exports.checkName=function(req,res,next){
-
-// }
-
 exports.login=function(req,res,next){
     res.render("login.ejs");
 }
@@ -42,7 +38,14 @@ exports.do_login=function(req,res,next){
 
     // console.log(email,pass);
     User_model.sel_data(email,pass,function(err,data){
-        
-
+        // console.log(data);
+        if(data.length>0){
+            req.session=data[0];
+            res.redirect('/index')
+        }
     })
+}
+
+exports.index=function(req,res,next){
+    res.render("index1.ejs");
 }

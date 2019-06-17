@@ -29,6 +29,7 @@ exports.checkname=function(req,res,next){
     })
 }
 
+
 exports.login=function(req,res,next){
     res.render("login.ejs");
 }
@@ -41,7 +42,7 @@ exports.do_login=function(req,res,next){
         // console.log(data);
         if(data.length>0){
             req.session=data[0];
-            res.redirect('/index')
+            res.redirect('/index');
         }
     })
 }

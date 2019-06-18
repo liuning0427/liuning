@@ -42,7 +42,7 @@ exports.do_login=function(req,res,next){
         // console.log(data);
         if(data.length>0){
             req.session=data[0];
-            res.redirect('/index');
+            res.redirect('/');
         }
     })
 }

@@ -1,3 +1,7 @@
+var Blog_model=require('../models/blog_model.js')
 exports.index=function(req,res,next){
-    res.render("index1.ejs");
+    // res.render("index_logined.ejs");
+    Blog_model.sel_all(function(err,data){
+        console.log(data);
+    })
 }

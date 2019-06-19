@@ -17,6 +17,9 @@ function checkLogin(req,res,next){
 }
 
 router.get('/',checkLogin);
+router.get('/',function(req,res,next){
+  res.render('../views/index1.ejs')
+})
 
 router.get('/reg',User.reg);
 router.post('/reg',User.do_reg);
@@ -24,7 +27,7 @@ router.post('/reg',User.do_reg);
 router.get('/login',User.login);
 router.post('/login',User.do_login);
 
-router.get('/',Blog.index);
+router.get('/index',Blog.index);
 
 router.post('/checkname',User.checkname);
 

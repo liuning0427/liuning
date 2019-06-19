@@ -47,6 +47,7 @@ exports.do_login=function(req,res,next){
     })
 }
 
-exports.index=function(req,res,next){
-    res.render("index1.ejs");
+exports.unlogin=function(req,res,next){
+    req.session=null;
+    res.redirect('/');
 }

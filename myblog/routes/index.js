@@ -12,14 +12,16 @@ function checkLogin(req,res,next){
   if(req.session){
     next();
   }else{
-    res.redirect('/login');
+    res.redirect('/');
   }
 }
 
-router.get('/',checkLogin);
+router.get('/index',checkLogin);
 router.get('/',function(req,res,next){
   res.render('../views/index1.ejs')
 })
+
+router.get('/unlogin',User.unlogin);
 
 router.get('/reg',User.reg);
 router.post('/reg',User.do_reg);
@@ -30,5 +32,10 @@ router.post('/login',User.do_login);
 router.get('/index',Blog.index);
 
 router.post('/checkname',User.checkname);
+
+router.get('/newblog',Blog.newblog);
+router.post('/newblog',Blog.do_newblog);
+
+router.get('/catalog',Blog.catalog)
 
 module.exports = router;

@@ -94,132 +94,18 @@
 		<th>文章</th>
 		<th>操作</th>
 	</tr>
+	<% cata.forEach(function(cata,index){%>
 	<tr id="catalog_92334">
-		<td class="idx">1</td>
-		<td class="name"><a href="editCatalog.htm" title="点击修改博客分类">工作日志</a></td>
-		<td class="num">3</td>
+		<td class="idx"><%= cata.CATALOG_ID%></td>
+		<td class="name"><a href="editCatalog.htm" title="点击修改博客分类"><%= cata.NAME%></a></td>
+		<td class="num"><%= cata.BLOG_COUNT%></td>
 		<td class="opts">
-			<a href="editCatalog.htm" title="点击修改博客分类">修改</a>
+			<a href="/catalog" title="点击修改博客分类">修改</a>
 			<a href="#" onclick="return delete_catalog(154693,92334);">删除</a>
 		</td>
 	</tr>
-	<tr id="catalog_92335">
-		<td class="idx">2</td>
-		<td class="name"><a href="#" title="点击修改博客分类">日常记录</a></td>
-		<td class="num">0</td>
-		<td class="opts">
-			<a href="#" title="点击修改博客分类">修改</a>
-			<a href="#" onclick="return delete_catalog(154693,92335);">删除</a>
-		</td>
-	</tr>
-	<tr id="catalog_92336">
-		<td class="idx">3</td>
-		<td class="name"><a href="#" title="点击修改博客分类">转贴的文章</a></td>
-		<td class="num">0</td>
-		<td class="opts">
-			<a href="#" title="点击修改博客分类">修改</a>
-			<a href="#" onclick="return delete_catalog(154693,92336);">删除</a>
-		</td>
-	</tr>
+	<% })%>
 </tbody></table>
 </form>
 </div>
-<script type="text/javascript">
-<!--
-$('#CatalogForm').ajaxForm({
-    success: function(html) {
-    	if(html.length == 0)
-    		location.reload();
-    	else{
-    		$('#error_msg').hide();
-    		$('#error_msg').html(html);
-    		$('#error_msg').show("fast");
-        }
-	}
-});
-$('#BlogDispForm').ajaxForm({
-    success: function(html) {alert(html);}
-});
-function delete_catalog(space, catalog_id){
-	if(confirm('确实要删除此博客分类吗？')){
-		var args = "space="+space+"&id="+catalog_id;
-		ajax_post('/action/blog/delete_blog_catalog',args,function(html){
-		if(html.length==0)
-			$('#catalog_'+catalog_id).fadeOut();
-		else
-			alert(html);
-		});
-	}
-	return false;
-}
-$('#chb_blog_enabled').click(function(){
-	var chk = $('#chb_blog_enabled').attr("checked");
-	if(!confirm(chk?"请确认是否要开启空间的博客功能？":"请确认是否要关闭空间博客功能？")) return false;
-	ajax_post("/action/blog/switch_blog?space=154693","enabled="+chk,function(){
-		alert(chk?"已经开启了博客功能！":"博客功能已经关闭！");
-	});
-});
-//-->
-</script></div>
-	<div class="clear"></div>
-</div>
-<script type="text/javascript">
-<!--
-$(document).ready(function() {
-	$('#AdminTitle').text('博客设置/分类管理');
-});
-$('.AutoCommitForm').ajaxForm({
-    success: function(html) {	
-		$('#error_msg').hide();
-		if(html.length>0)
-			$('#error_msg').html("<span class='error_msg'>"+html+"</span>");
-		else
-			$('#error_msg').html("<span class='ok_msg'>操作已成功完成</span>")
-		$('#error_msg').show("fast");
-    }
-});
-$('.AutoCommitJSONForm').ajaxForm({
-	dataType: 'json',
-    success: function(json) {	
-		$('#error_msg').hide();
-		if(json.error==0){
-			if(json.msg)
-				$('#error_msg').html("<span class='ok_msg'>"+json.msg+"</span>");
-			else
-				$('#error_msg').html("<span class='ok_msg'>操作已成功完成</span>");
-		}
-		else {
-			if(json.msg)
-				$('#error_msg').html("<span class='error_msg'>"+json.msg+"</span>");
-			else
-				$('#error_msg').html("<span class='error_msg'>操作已成功完成</span>");
-		}
-		$('#error_msg').show("fast");
-    }
-});
-//-->
-</script>
-</div>
-	<div class="clear"></div>
-	<div id="OSC_Footer">© 赛斯特(WWW.SYSIT.ORG)</div>
-</div>
-<script type="text/javascript" src="js/space.htm" defer="defer"></script>
-<script type="text/javascript">
-<!--
-$(document).ready(function() {
-	$('a.fancybox').fancybox({titleShow:false});
-});
-
-function pay_attention(pid,concern_it){
-	if(concern_it){
-		$("#p_attention_count").load("/action/favorite/add?mailnotify=true&type=3&id="+pid);
-		$('#attention_it').html('<a href="javascript:pay_attention('+pid+',false)" style="color:#A00;">取消关注</a>');	
-	}
-	else{
-		$("#p_attention_count").load("/action/favorite/cancel?type=3&id="+pid);
-		$('#attention_it').html('<a href="javascript:pay_attention('+pid+',true)" style="color:#3E62A6;">关注此文章</a>');
-	}
-}
-//-->
-</script>
 </body></html>

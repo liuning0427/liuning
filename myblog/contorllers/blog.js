@@ -48,5 +48,16 @@ exports.do_newblog=function(req,res,next){
 }
 
 exports.catalog=function(req,res,next){
-    res.render("editCatalog.ejs");
+    var uid=req.session.USER_ID;
+    Blog_model.sel_catalog(uid,function(err,data){
+        // console.log(data);
+        res.render("editCatalog.ejs",{
+            'cata':data,
+            'sess':req.session
+        });
+    })
 }
+
+// exports.do_catalog=function(req,res,next){
+//     var uid=req.session.USER_ID;
+// }

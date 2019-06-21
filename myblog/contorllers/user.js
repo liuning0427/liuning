@@ -6,11 +6,11 @@ exports.reg=function(req,res,next){
 exports.do_reg=function(req,res,next){
     var email=req.body.email;
     var pass=req.body.pwd;
+    var name=req.body.name;
+    // console.log(email);
+    // console.log(pass);
 
-    console.log(email);
-    console.log(pass);
-
-    User_model.insert_data(email,pass,function(err,data){
+    User_model.insert_data(email,pass,name,function(err,data){
         // console.log(data);
         if(data.affectedRows>0){
             res.redirect("/login");
@@ -36,8 +36,7 @@ exports.login=function(req,res,next){
 exports.do_login=function(req,res,next){
     var email=req.body.email;
     var pass=req.body.pwd;
-
-    // console.log(email,pass);
+    // console.log(email,pass,name);
     User_model.sel_data(email,pass,function(err,data){
         // console.log(data);
         if(data.length>0){

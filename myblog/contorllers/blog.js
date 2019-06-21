@@ -42,10 +42,15 @@ exports.do_newblog=function(req,res,next){
     Blog_model.insert_newblog(title,content,uid,cid,function(err,data){
         // console.log(data);
         if(data. affectedRows>0){
-            res.redirect('/index');
+            Blog_model.update_blog_count(cid,function(err,data){
+                if(data.affectedRows>0){
+                    res.redirect('/index');
+                }
+            })
         }
     })
 }
+
 
 exports.catalog=function(req,res,next){
     var uid=req.session.USER_ID;

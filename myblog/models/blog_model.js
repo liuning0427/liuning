@@ -29,3 +29,8 @@ exports.sel_catalog=function(uid,callback){
     var sql="select * from t_blog_catalogs where USER_ID=?";
     db.query(sql,[uid],callback);
 }
+
+exports.add_catalog=function(cname,uid,callback){
+    var sql="insert into t_blog_catalogs(NAME,USER_ID) values(?,?)";
+    db.query(sql,[cname,uid],callback);
+}

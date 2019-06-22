@@ -56,13 +56,19 @@ exports.catalog=function(req,res,next){
     var uid=req.session.USER_ID;
     Blog_model.sel_catalog(uid,function(err,data){
         // console.log(data);
-        res.render("editCatalog.ejs",{
+        res.render("blogCatalogs.ejs",{
             'cata':data,
             'sess':req.session
         });
     })
 }
 
-// exports.do_catalog=function(req,res,next){
-//     var uid=req.session.USER_ID;
-// }
+exports.do_catalog=function(req,res,next){
+    var cname=req.body.name;
+    var uid=req.session.USER_ID;
+    Blog_model.add_catalog(cname,uid,function(err,data){
+        if(data.affectedRows>0){
+            res.redirect('/catalog');
+        }
+    })
+}

@@ -37,6 +37,6 @@ router.get('/newblog',Blog.newblog);
 router.post('/newblog',Blog.do_newblog);
 
 router.get('/catalog',Blog.catalog);
-// router.post('/catalog',Blog.do_catalog);
+router.post('/catalog',Blog.do_catalog);
 
 module.exports = router;

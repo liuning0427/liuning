@@ -2,6 +2,8 @@ var http=require("http");
 var url=require("url");
 var fs=require("fs");
 var querystring=require("querystring");
+var dns=require("dns");
+var util=require("util");
 
 http.createServer(function(req,res){
     var pathname=url.parse(req.url).pathname;
@@ -34,6 +36,17 @@ function parse(req,res){
         postData+=post
     })
     req.addListener("end",function(){
-        console.log(postData);
+        // console.log(postData);
+        var param=querystring.parse(postData);
+        var dname=param.name;
+        dns.resolve4(dname,function(err,addresses){
+            if(err){
+                res.writeHead(500,{"Content":"text/plain"});
+                res.end("error");
+            }else{
+                res.writeHead(200,{"Content":"text/plain"});
+                res.end(util.inspect(addresses));
+            }
+        })
     })
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div{
+            background: #cc1;
+            width: 200px;
+            height: 200px;
+        }
+        #haha{
+            background: #4444dd;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="div">
+        <div id="haha">haha</div>
+        <a href="www.baidu.com" id="baidu">百度</a>
+    </div>
+
+    <script>
+        var Baidu=document.getElementById("baidu");
+        var Div=document.getElementById("div");
+        var haha=document.getElementById("haha")
+        Baidu.onclick=function(e){
+            console.log(01110001);
+            //阻止默认行为 
+            return false;
+            // e.preventDefault();
+            
+            //阻止事件冒泡
+            e.stopPropagation();
+            
+        }
+        Div.onclick=function(e){
+            console.log(123);
+        }
+        haha.onclick=function(e){
+            console.log(456);
+            // e.stopPropagation();
+        }
+
+    </script>
+
+</body>
+</html>

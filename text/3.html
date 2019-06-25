@@ -40,11 +40,11 @@
             
         }
         Div.onclick=function(e){
-            console.log(123);
+            console.log(e.target);
         }
         haha.onclick=function(e){
-            console.log(456);
-            // e.stopPropagation();
+            console.log(e.target.tagName);
+            e.stopPropagation();
         }
 
     </script>

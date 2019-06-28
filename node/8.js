@@ -9,7 +9,7 @@ async function async2(){
 console.log("script start");
 setTimeout(function(){
     console.log("settimeout");
-},0)
+},0) 
 async1();
 new Promise(function(resolve){
     console.log("promise1");

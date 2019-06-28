@@ -3,9 +3,9 @@ var url=require("url");
 var fs=require("fs");
 
 http.createServer(function(req,res){
-    // console.log(url.parse(req.url));
-    // var data=url.parse(req.url).query;
-    // var arr = data.split("=");
+    console.log(url.parse(req.url));
+    var data=url.parse(req.url).query;
+    var arr = data.split("=");
     // console.log(arr);
     var readPath=__dirname+'/'+url.parse("1.html").pathname;
     // console.log(readPath);

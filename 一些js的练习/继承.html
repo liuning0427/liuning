@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承</title>
+</head>
+<body>
+    <script>
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        Person.prototype.watch=function(){
+            console.log(this.name+"正沉迷追剧");
+        }
+        function Animal(name,age){
+            Person.call(this,name,age);//继承属性
+        }
+        Animal.prototype=new Person();//继承方法
+        Animal.prototype.constructor=Person;
+        var a1=new Animal("刘凝",20);
+        a1.watch();
+
+    
+    </script>
+</body>
+</html>

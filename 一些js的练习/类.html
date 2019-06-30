@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>类</title>
+</head>
+<body>
+    
+    <script>
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            this.watch=function(){
+                console.log(this.name+"正在看陈情令");
+            }
+        }
+
+        Person.prototype.feel="开心";
+        
+        var ln = new Person("刘凝");
+        ln.watch();
+        console.log(ln.feel);
+        console.log(Person.prototype);
+        console.log(ln.__proto__);
+
+    </script>
+
+</body>
+</html>

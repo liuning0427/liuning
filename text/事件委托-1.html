@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click</button>
+    <ul class="ul">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+    <script>
+        var aLi=document.getElementsByTagName('li');
+        var oBtn=document.getElementById('btn');
+        var oUl=document.getElementsByClassName('ul')[0];//因为getElementsByClassName取到的是一个数组，没有定位到其中的某一个对象。所以我们需要将其定位到我们所需要的对象上去
+        // 因为点击事件绑定在li上的话，后生成的事件不能绑定上
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(this.innerHTML);
+        //     }
+        // }
+        
+
+        oBtn.onclick = function(){
+            // console.log("haha");
+            var oLi = document.createElement('li');
+            oLi.innerHTML = Math.random();
+            oUl.appendChild(oLi); //插入元素
+        }
+
+        oUl.onclick = function(e){
+            // console.log(this.innerHTML);
+            if(e.target.tagName == 'LI'){
+                console.log(e.target.innerHTML)
+            }
+        }
+
+
+    </script>
+</body>
+</html>

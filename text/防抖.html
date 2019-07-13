@@ -9,7 +9,20 @@
 <body>
     <button id="btn">click</button>
     <script>
-        
+        function debounce(fn,delay){
+            var timer = null; //首先清除定时器
+            return function(){
+                clearTimeout(timer)
+                timer = setTimeout(function(){
+                    fn();
+                },delay)
+            }
+        }
+
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = debounce(function(){
+            console.log(Date.now());
+        },400);
     </script>
 </body>
 </html>

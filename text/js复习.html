@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = "xzgg"
+        // console.log(Array.isArray(a));
+        // console.log(typeof(a));
+
+        // var obj = {
+        //     name:'xz',
+        //     age:28
+        // }
+        // console.log(obj instanceof Object);
+        // console.log(obj.constructor == Object);
+
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+            // return {
+            //     name:'ln',
+            //     age:21
+            // };
+            // this.say = function(){
+            //     console.log("哈哈哈哈");
+            // }
+        }
+        Person.prototype.say = function(){
+            console.log(this.name + "魏无羡");
+        } // 原型下的方法
+        function Xz(name,age){
+            Person.call(this,name,age); // Xz继承Person属性
+        }
+        Xz.prototype = new Person(); // 继承方法
+        Xz.prototype.constructor = Person; 
+
+        var x1 = new Xz('zz',20);
+        console.log(x1);
+        x1.say();
+
+        // Person.prototype.sex = "男";
+        
+
+
+        // var p1 = new Person('xz',27);
+        // p1.say();
+        // console.log(p1.say);
+
+
+    </script>
+</body>
+</html>

@@ -35,13 +35,12 @@
         // 浅拷贝
         // 因为obj1和obj2都是堆内存，obj1占了一个堆内存地址，obj2也占用了同一个地址，所以当obj1变动时obj2也同样跟随obj1变动；
 
-
-            var obj2 = new Object();
-            obj2.name = obj1.name;
-            obj1.name = "cai";
-            console.log(obj2);
-            // 深拷贝
-            // obj1和obj2在堆内存中是两块独立的空间，不相互影响，所以obj1改变的时候obj2没有改变；
+        var obj2 = new Object();
+        obj2.name = obj1.name;
+        obj1.name = "cai";
+        console.log(obj2);
+        // 深拷贝
+        // obj1和obj2在堆内存中是两块独立的空间，不相互影响，所以obj1改变的时候obj2没有改变；
 
 
     </script>
